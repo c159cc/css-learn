@@ -1,0 +1,84 @@
+<title>少一些冲动和浮躁, 多一些冷静和客观</title>
+<style>
+  .demo {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .demo>.wrap>.fa {
+    min-width: 200px;
+    min-height: 200px;
+    border: 1px solid red;
+  }
+
+  .demo>.wrap>.fa::before,
+  .demo>.wrap>.fa::after,
+  .demo>.wrap>.fa>.son {
+    position: absolute;
+    width: 0;
+    border: 50px solid transparent;
+    border-top: 200px solid;
+  }
+
+  .demo>.wrap>.fa::before {
+    content: "";
+    color: rgba(0, 0, 0, .1);
+  }
+
+  .demo>.wrap>.fa::after {
+    content: "";
+    color: skyblue;
+    transform: skew(-45deg);
+  }
+
+  .demo>.wrap>.fa>.son {
+    color: yellow;
+    transform: skew(45deg) rotate(45deg);
+  }
+
+  .son2 {
+    position: absolute;
+    width: 0;
+    border: 50px solid transparent;
+    border-top: 200px solid;
+    color: #cd0000;
+    transform: skew(225deg);
+    opacity: 0.5;
+  }
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+  <div class="demo">
+    <div class="wrap">
+      <div class="fa">
+        <div class="son"></div>
+        <div class="son2"></div>
+      </div>
+    </div>
+
+  </div>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>标题</h5>
+      <p>只有倾斜可以变形
+      </p>
+      <p>倾斜得到对应的形状, 旋转对齐</p>
+      <h5>倾斜45deg==倾斜225deg</h5>
+      <h5>倾斜的中心是四边形的中心</h5>
+      <h5>旋转为什么会变胖呢?</h5>
+      <p>黄色从红色变来,角度没有45deg,半径变短了, 是不是几何中心变了?
+
+      </p>
+      <h5>为什么son没有把父元素红框撑大??</h5>
+      <p>因为son是绝对定位</p>
+      <h5>图形的倾斜和旋转有什么规律吗??</h5>
+      <p>给一个样式是不能猜到效果, 给一个效果能不能猜到样式?</p>
+      <h5>旋转之后为什么大小会发生变化??</h5>
+      <h5>为什么skew之后rotate会改变形状, 有规律吗?</h5>
+    </blockquote>
+  </div>
+  <script>
+
+
+  </script>

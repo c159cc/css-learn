@@ -1,0 +1,66 @@
+<title>少一些冲动和浮躁, 多一些冷静和客观</title>
+<style>
+  #search {
+    width: 200px;
+    height: 40px;
+    padding: 10px 40px 10px 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    outline-offset: 0;
+  }
+
+  .icon-clear {
+    line-height: 15px;
+    text-align: center;
+
+    color: white;
+    background-color: #999;
+    background-clip: padding-box;
+
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    box-sizing: content-box;
+    border: 11px solid transparent;
+    /* padding: 11px;
+    background-clip: content-box; */
+    border-radius: 50%;
+    margin: 1px 0 0 -38px;
+  }
+
+  .icon-clear::before {
+    content: "x";
+  }
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+
+  <input type="search" id="search" value="我是初始值">
+  <label for="search" class="icon-clear"></label>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>label如何定位到input里面</h5>
+      <p>绝对定位通过负margin偏移
+      </p>
+      <h5>label的高度如何能和input一样?</h5>
+      <p>设置为固定的数值
+      </p>
+      <h5>label设置宽度之后input如何排除这一部分宽度?</h5>
+      <p>
+        padding-right
+      </p>
+      <h5>icon-clear没有设置宽高,表现为包裹性,会被子元素撑大, 如何保持icon-clear的大小?</h5>
+      <p>
+        我能想到的是他们的共同父元素绝对定位
+      </p>
+      <p>input设置固定大小</p>
+      <h5>static中的absolute是left:0;top:0;</h5>
+    </blockquote>
+  </div>
+</div>
+<script>
+  search.onclick = () => {
+    console.log("onclick")
+  }
+
+</script>

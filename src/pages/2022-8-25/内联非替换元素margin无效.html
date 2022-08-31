@@ -1,0 +1,40 @@
+<title>少一些冲动和浮躁, 多一些冷静和客观</title>
+<style>
+  .box {
+    margin-top: 200px;
+    width: 200px;
+    height: 200px;
+    background: pink;
+  }
+
+  .foo {
+    content: url(../../config/images/1.jpg);
+    /* content: "home"; */
+    /* display: inline-block; */
+    /* display: block; */
+    border: 1px solid red;
+    margin: 50px;
+  }
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+
+  <div class="box">
+    <span class="foo">hello</span>
+  </div>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>内联非替换元素margin无效, 内联替换元素margin有效并且不会合并</h5>
+      <p>给内联元素设置content属性margin就有效了?
+
+      </p>
+      <p>设置content之后margin还是无效, 是没有变成替换元素吗?</p>
+      <p>content改为url之后margin生效</p>
+      <p>content改为文本, 垂直margin无效, 为什么? 因为文本不是替换元素吗?</p>
+    </blockquote>
+  </div>
+</div>
+<script>
+
+
+</script>

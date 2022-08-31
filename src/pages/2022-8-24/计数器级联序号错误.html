@@ -1,0 +1,61 @@
+<title>少一些冲动和浮躁, 多一些冷静和客观</title>
+<style>
+  .reset {
+    counter-reset: wx2;
+    padding-left: 20px;
+  }
+
+  .counter::before {
+    content: counters(wx2, '-') '.';
+    counter-increment: wx2;
+
+  }
+
+  .reset~.counter {
+    color: #cd0000;
+  }
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+  <div class="reset">
+    <div class="counter">王小二
+      <div class="reset">
+        <div class="counter">王小二大儿子</div>
+        <div class="counter">王小二二儿子
+        </div>
+        <div class="reset">
+          <div class="counter">二儿子大孙子</div>
+          <div class="counter">二儿子二孙子</div>
+          <div class="counter">二儿子三孙子</div>
+        </div>
+        <div class="counter">王小二三儿子</div>
+        <div class="counter">王小二四儿子
+          <div class="reset">
+            <div class="counter">四儿子大孙子</div>
+          </div>
+        </div>
+      </div>
+      <div class="counter">王小二子元素reset的兄弟</div>
+    </div>
+  </div>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>标红的部分为什么错了?</h5>
+      <p> reset不能作为counter的兄弟元素, 一旦作为counter的兄弟元素, 王小二的儿子序号为1-2, 后面的reset会产生什么效果呢?
+      </p>
+      <p>reset放在里面会产生1-2-1, 这里作为兄弟元素的话, 每一次reset之后, reset的子元素都加一层, reset后面的兄弟元素效果等同于子元素</p>
+      <h5>!! reset的兄弟元素会延续reset子元素的序号, reset会把兄弟当成儿子</h5>
+      <h5>如何判断一个元素的序号?</h5>
+      <p>1, 前面有兄弟元素: </p>
+      <p>1-1, 兄弟元素为counter: 尾数+1 </p>
+      <p>1-2, 兄弟元素为reset: reset最小的儿子尾数+1 </p>
+      <p>1, 前面没有兄弟元素: </p>
+      <p>1-1, 父元素为counter: 尾数+1 </p>
+      <p>1-2, 父元素为reset: 父元素加一层尾数+1 </p>
+    </blockquote>
+  </div>
+</div>
+<script>
+
+
+</script>

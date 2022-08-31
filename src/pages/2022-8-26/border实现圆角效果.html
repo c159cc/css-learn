@@ -1,0 +1,46 @@
+<title>少一些冲动和浮躁, 多一些冷静和客观</title>
+<style>
+  .button {
+    margin-top: 2px;
+    display: inline-block;
+    padding: 5px 10px;
+    background: #cd0000;
+    color: #fff;
+    position: relative;
+  }
+
+  .button::before,
+  .button::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    border: 2px solid;
+  }
+
+  .button::before {
+    top: -4px;
+    border-color: transparent transparent black transparent;
+  }
+
+  .button::after {
+    bottom: -4px;
+    border-color: black transparent transparent transparent;
+  }
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+  <a href class="button">我是按钮</a>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>标题</h5>
+      <p>qa?
+      </p>
+      <p>解答</p>
+    </blockquote>
+  </div>
+</div>
+<script>
+
+
+</script>

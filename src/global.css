@@ -1,0 +1,7 @@
+/* @import url("./config/css/demo.css");
+@import url("./config/css/hl.css"); */
+.part *::after,
+.part *::before,
+.part * {
+  box-sizing: content-box;
+}

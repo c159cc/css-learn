@@ -1,0 +1,48 @@
+<title>少一些冲动和浮躁, 多一些冷静和客观</title>
+<style>
+  .reset {
+    counter-reset: wx2;
+    padding-left:20px;
+  }
+
+  .counter::before {
+    content: counters(wx2, '-') '.';
+    counter-increment: wx2;
+
+  }
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+  <div class="reset">
+    <div class="counter">王小二
+      <div class="reset">
+        <div class="counter">王小二大儿子</div>
+        <div class="counter">王小二二儿子
+          <div class="reset">
+            <div class="counter">二儿子大孙子</div>
+            <div class="counter">二儿子二孙子</div>
+            <div class="counter">二儿子三孙子</div>
+          </div>
+        </div>
+        <div class="counter">王小二三儿子</div>
+        <div class="counter">王小二四儿子
+          <div class="reset">
+            <div class="counter">四儿子大孙子</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>标题</h5>
+      <p>每个reset为一个组, reset进行了一次计数器重置, reset的子元素可以享受级联
+      </p>
+      <p>解答</p>
+    </blockquote>
+  </div>
+</div>
+<script>
+
+
+</script>

@@ -1,0 +1,55 @@
+<title>点线实现</title>
+<style>
+  .ico {
+    width: 100px;
+    height: 100px;
+    background: pink;
+    border-right: 10px solid ;
+    border-image: linear-gradient(to bottom, transparent 50%, red 50%);
+  }
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+  <a href="#" id="btnScale" class="btn btn-blue">2倍显示</a>
+  <div class="mt20"><strong>点线攻略</strong></div>
+  <div class="wrap">
+    <div class="ico"></div>
+  </div>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>2022年8月22日08:46:12</h5>
+      <p>border渐变?
+      </p>
+      <p>利用border渐变, 上透明, 下实色</p>
+      <p>border的颜色无法实现渐变</p>
+    </blockquote>
+  </div>
+</div>
+<script>
+  if (document.querySelector) {
+    var btnScale = document.querySelector("#btnScale"), icoAll = document.querySelectorAll(".ico"), scale = 1;
+    btnScale.onclick = function () {
+      var transform = '';
+      if (scale == 1) {
+        scale = 2;
+        this.innerHTML = '比例还原';
+      } else {
+        scale = 1;
+        this.innerHTML = '2倍显示';
+      }
+
+      transform = 'scale(' + scale + ')';
+      for (var index = 0; index < icoAll.length; index++) {
+        icoAll[index].style.webkitTransform = transform;
+        icoAll[index].style.msTransform = transform;
+        icoAll[index].style.transform = transform;
+        if (window.addEventListener) {
+          icoAll[index].style.margin = "0 " + 100 * (scale - 1) + "px";
+        } else {
+          icoAll[index].style.zoom = scale;
+        }
+      }
+    }
+  }
+
+</script>

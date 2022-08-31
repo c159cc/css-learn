@@ -1,0 +1,100 @@
+<title>少一些冲动和浮躁, 多一些冷静和客观</title>
+<style>
+  .box {
+    width: 256px;
+    height: 256px;
+    border-bottom: 1px dashed #ccc;
+    text-align: justify;
+  }
+
+  .box:before {
+    content: "";
+    display: inline-block;
+    height: 100%;
+  }
+
+  .box:after {
+    content: "";
+    display: inline-block;
+    width: 100%;
+  }
+
+  .bar {
+    display: inline-block;
+    width: 20px;
+    height: 0;
+  }
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+  <div id="box" class="box"><i class="bar"></i>
+    <i class="bar"></i>
+    <i class="bar"></i>
+    <i class="bar"></i>
+  </div>
+  <p><button id="button">再增加一条数据</button></p>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>为什么after元素水平?
+      </h5>
+      <p>
+        inline-block中宽度100%出现换行
+      </p>
+      <h5>为什么i位于底部?
+      </h5>
+      <p>
+        因为before元素是inline-block, 下边缘对齐;
+        before的作用基线对齐;
+        after的作用让i元素位于第一行;
+      </p>
+      <h5>为什么第一个i之前不能有空格?
+      </h5>
+      <p>
+        空格也是一个文本元素
+      </p>
+      <h5>给元素添加高度
+      </h5>
+      <p>
+        ele.style.height = Math.ceil(Math.random() * 256) + 'px';
+      </p>
+      <h5>给元素添加背景
+      </h5>
+      <p>
+        ele.style.backgroundColor = '#' + (Math.random() + '').slice(-6);
+      </p>
+      <h5>复制元素
+      </h5>
+      <p>
+        let newNode = bars[0].cloneNode();
+      </p>
+      <h5>追加html
+      </h5>
+      <p>
+        box.innerHTML = ' ' + newNode.outerHTML;
+      </p>
+
+    </blockquote>
+  </div>
+</div>
+<script>
+  if (document.querySelector) {
+    let bars = box.querySelectorAll('.bar');
+    let length = bars.length;
+    for (let i = 0; i < length; i++) {
+      let ele = bars[i];
+      ele.style.height = Math.ceil(Math.random() * 256) + 'px';
+      ele.style.backgroundColor = '#' + (Math.random() + '').slice(-6);
+      console.log("ele", ele)
+    }
+    button.onclick = function () {
+      let newNode = bars[0].cloneNode();
+      newNode.style.height = Math.ceil(Math.random() * 256) + 'px';
+      newNode.style.backgroundColor = '#' + (Math.random() + '').slice(-6);
+      box.innerHTML = ' ' + newNode.outerHTML; // 这里需要添加空格
+      length++;
+      if (length > 8) {
+        this.setAttribute('disabled', 'disabled')
+      }
+    }
+  }
+</script>

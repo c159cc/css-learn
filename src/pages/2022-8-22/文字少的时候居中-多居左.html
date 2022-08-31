@@ -1,0 +1,36 @@
+<title>点线实现</title>
+<style>
+.box1{
+  width: 200px;
+  height: 100px;
+  background: #cd0000;
+  text-align: center;
+}
+.content1{
+  display:inline-block;
+  text-align: left;
+}
+
+
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+  <div class="box1">
+    <div class="content1" id="content1">dsfsd</div>
+  </div>
+
+  <button id="add">新增文字</button>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>if和else同时存在</h5>
+      <p>容器使用if水平居中, 容器里面的元素使用else居左
+      </p>
+    </blockquote>
+  </div>
+</div>
+<script>
+  add.onclick=function(){
+    content1.innerHTML+="-新增文字"
+  }
+
+</script>

@@ -1,0 +1,60 @@
+<title>min-width可以突破flex父元素的边界, width不可以</title>
+<style>
+  .wrap1 {
+    display: flex;
+    gap: 20px;
+  }
+
+  .fa1 {
+    display: flex;
+    background: pink;
+    width: 100px;
+  }
+
+  .son1 {
+    display: table-cell;
+    width: 200px;
+    border: 1px solid red;
+  }
+
+  .son2 {
+    display: table-cell;
+    min-width: 200px;
+    border: 1px solid red;
+  }
+
+  .desc {
+    color: #ccc;
+  }
+</style>
+<div id="effect" class="part">
+  <div class="wrap1">
+    <div>
+      <div class="fa1">
+        <div class="son2">1</div>
+        <div class="son2">理解:table-cell 会自动伸缩</div>
+      </div>
+      <div class="desc">min-width:200px;子元素没有被收缩</div>
+    </div>
+    <div style="margin-left:300px;">
+      <div class="fa1">
+        <div class="son1">1</div>
+        <div class="son1">理解:table-cell 会自动伸缩</div>
+      </div>
+      <div class="desc">width:200px; 子元素收缩</div>
+    </div>
+  </div>
+
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5 >2022年8月19日</h5>
+      <p>粉红色的背景是fa1, 红色的边框是fa1里面的2个子元素, fa1设置了flex,width属性.
+      </p>
+      <p>左边的图超过了flex父元素, 右边的被flex父元素缩小</p>
+    </blockquote>
+
+
+  </div>
+</div>
+<script>
+</script>

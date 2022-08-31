@@ -1,0 +1,62 @@
+<title>点线实现</title>
+<style>
+  .ao,
+  .tu {
+    width: 0;
+    display: inline-block;
+    margin: 36px;
+  }
+
+  .ao::before,
+  .tu::before {
+    outline: 2px solid #cd0000;
+    font-family: Consolas, Monaco, monospace;
+  }
+
+  .ao::before {
+    content: 'love你love'
+  }
+
+  .tu::before {
+    content: '你love你'
+  }
+
+  .tu {
+    direction: rtl;
+  }
+
+  .fa {
+    width: 0;
+    display: inline-block;
+    /* font-family: Consolas, Monaco, monospace; */
+  }
+
+  .son {
+    outline: 2px solid #cd0000;
+  }
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+  <span class="ao"></span>
+  <span class="tu"></span>
+  <div class="fa">
+    <span class="son">你love你</span>
+  </div>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>已经设置了width为0, 为什么没有换行?</h5>
+      </p>
+      <p>解答: width为0要设置在容器元素上
+      </p>
+    </blockquote>
+    <blockquote class="block-tip">
+      <h5>父元素设置width为0,display为inline-block子元素为inline就可以了?</h5>
+      <p>解答: 不可以 必须要指定font-family
+      </p>
+    </blockquote>
+  </div>
+</div>
+<script>
+
+
+</script>

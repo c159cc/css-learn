@@ -1,0 +1,41 @@
+<title>少一些冲动和浮躁, 多一些冷静和客观</title>
+<style>
+  button {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+  }
+
+  label {
+    display: inline-block;
+    line-height: 20px;
+    padding: 10px;
+    background: pink;
+    color:#fff;
+  }
+  label:hover{
+    background: blue;
+  }
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+  <button id="btn"></button>
+  <label for="btn">按钮</label>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>如何隐藏按钮?</h5>
+      <p>clip: rect(0, 0, 0, 0);
+      </p>
+      <h5>如何控制按钮样式</h5>
+      <p>label模拟按钮
+      </p>
+      <h5>label模拟按钮的原理</h5>
+      <p>for等于button的id</p>
+    </blockquote>
+  </div>
+</div>
+<script>
+  btn.onclick = () => {
+    console.log("btn click")
+  }
+
+</script>

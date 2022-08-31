@@ -1,0 +1,32 @@
+<title>select标签和事件</title>
+<style>
+.demo{
+  margin: 1em;
+  padding: 10px 1em;
+}
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+
+  <div class="demo">
+    <select id="select">
+      <option value>请选择</option>
+      <option value="block">block</option>
+      <option value="table">table</option>
+      <option value="list-item">list-item</option>
+    </select>
+    <div id="show"></div>
+  </div>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>清除浮动的原理</h5>
+      <p>浮动元素增加块级兄弟元素, 防止父元素塌陷
+      </p>
+    </blockquote>
+  </div>
+</div>
+<script>
+  select.onchange = function () {
+    show.innerHTML = this.value
+  }
+</script>

@@ -1,0 +1,63 @@
+<title>少一些冲动和浮躁, 多一些冷静和客观</title>
+<style>
+  .demo {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .demo>.wrap>.fa {
+    min-width: 200px;
+    min-height: 200px;
+    border: 1px solid red;
+  }
+
+  .demo>.wrap>.fa::before {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    background: rgba(0, 0, 0, .1);
+  }
+
+  .demo>.wrap>.fa>.son {
+    width: 100px;
+    height: 50px;
+    background: pink;
+  }
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+  <div class="demo">
+    <div class="wrap">
+      <h5>skew(30deg);</h5>
+      <div class="fa">
+        <div class="son" style="transform: skew(30deg);"></div>
+      </div>
+    </div>
+    <div class="wrap">
+      <h5>skew(30deg,30deg);</h5>
+      <div class="fa">
+        <div class="son" style="transform: skew(30deg,30deg);"></div>
+      </div>
+    </div>
+    <div class="wrap">
+      <h5>skew(0,30deg);</h5>
+      <div class="fa">
+        <div class="son" style="transform: skew(0,30deg);"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>skew的方向问题?</h5>
+      <p>x轴逆时针, y顺时针
+      </p>
+    </blockquote>
+  </div>
+</div>
+<script>
+
+
+</script>

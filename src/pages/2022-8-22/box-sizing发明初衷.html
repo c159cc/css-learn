@@ -1,0 +1,52 @@
+<title>点线实现</title>
+<style>
+  .container{
+    width: 280px;
+    margin:0 auto;
+    padding:40px 0;
+    background: #f0f3f9;
+    animation: width 2s infinite alternate;
+  }
+
+  @keyframes width {
+    from {width:200px;}
+    to {width:280px;}
+  }
+  .textarea{
+    padding:10px;
+    border: 1px solid #d0d0d5;
+    border-radius: 4px;
+    background: #fff;
+  }
+  .textarea>textarea{
+    width:100%;
+    line-height: 20px;
+    padding:0;
+    border:0 none;
+    outline: 0 none;
+    background: none;
+    resize: none;
+  }
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+  <div class="container">
+    <div class="textarea">
+      <textarea placeholder="初始值"></textarea>
+    </div>
+  </div>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>替换元素的宽度由内容决定</h5>
+      <p>要想替换元素撑满父元素, 必须要设置替换元素的宽度</p>
+      <p>一旦设置了宽度就丧失了灵活性</p>
+      <p>textarea是替换元素, 它的宽度完全由内容决定
+      </p>
+      <p>解答</p>
+    </blockquote>
+  </div>
+</div>
+<script>
+
+
+</script>

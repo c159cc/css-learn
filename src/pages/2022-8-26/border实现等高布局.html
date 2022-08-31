@@ -1,0 +1,87 @@
+<title>少一些冲动和浮躁, 多一些冷静和客观</title>
+<style>
+  .box {
+    width: 400px;
+    margin: 0 auto;
+    border-left: 150px solid #333;
+    background: #ccc;
+    box-sizing: border-box;
+  }
+
+  .box::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+
+  .box>nav {
+    float: left;
+    width: 150px;
+    margin-left: -150px;
+
+    color: #fff;
+    text-align: center;
+  }
+
+  .box>section {
+    text-align: center;
+  }
+
+  .btnGroup {
+    width: 400px;
+    margin: 0 auto;
+  }
+
+  .left {
+    display: inline-block;
+    width: 150px;
+    text-align: center;
+  }
+
+  .right {
+    display: inline-block;
+    width: calc(100% - 160px);
+    text-align: center;
+  }
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+
+  <div class="box">
+    <nav id="navWrap">
+      <div class="nav">导航1</div>
+    </nav>
+    <section id="sectionWrap">
+      <div class="module">模块1
+      </div>
+    </section>
+  </div>
+  <div class="btnGroup">
+    <div class="left"><input type="button" id="navMore" value="更多导航"></div>
+    <div class="right"><input type="button" id="moduleMore" value="更多模块"></div>
+
+  </div>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>标题</h5>
+      <p>qa?
+      </p>
+      <p>解答</p>
+    </blockquote>
+  </div>
+</div>
+<script>
+  var navIdx = 1, moduleIdx = 1
+
+  var rand = () => {
+    return 'f' + (Math.random() + '').slice(-1)
+  }
+
+  navMore.onclick = () => {
+    navWrap.insertAdjacentHTML('beforeEnd', '<div class="nav"> 导航' + (navIdx++) + '</div>')
+  }
+
+  moduleMore.onclick = () => {
+    sectionWrap.insertAdjacentHTML('beforeEnd', '<div class="module" style="background:#' + [rand(), rand(), rand()].join('') + '">模块' + (moduleIdx++) + '</div > ')
+  }
+</script>

@@ -1,0 +1,40 @@
+<title>少一些冲动和浮躁, 多一些冷静和客观</title>
+<style>
+  .demo11 {
+    display: inline-block;
+  }
+
+  .demo1,
+  .demo11 {
+    border: 1px solid red;
+    /* font-size: 0; */
+     font-size: 60px;
+    line-height: 0;
+  }
+
+  img {
+    vertical-align: baseline;
+  }
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+  <div class="demo1">x<img width="96" src="../../config/images/1.jpg" alt=""></div>
+  <div class="demo11">x<img width="96" src="../../config/images/1.jpg" alt=""></div>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>图片设置vertical-algin top,middle,bottom为什么可以消除间隙?</h5>
+      <p>间隙产生的原因是内联框错位, 这里只有一个有高度的内联框, 图片所在的内联框, 文字再大它的内联高度为0, 不会发生错位
+      </p>
+      <h5>font-size为0为什么可以消除间隙?</h5>
+      <p>内容框的基线和line-height中线重合, 内联框不会错位</p>
+      <h5>line-height为0 为什么可以消除间隙?</h5>
+      <p>文字的内联框在x中点上面一点, line-height为0不参与行高绘制, 行高完全由图片决定, 也不存在内联框错位</p>
+      <h5>那么内联框错位需要什么前提呢?</h5>
+      font-size不为0, baseline对齐, 另一个为图片或者inline-block
+    </blockquote>
+  </div>
+</div>
+<script>
+
+
+</script>

@@ -1,0 +1,183 @@
+<title>背景色镂空技术之color属性实现颜色可控图标实现3</title>
+<style>
+  .ico-list1 {
+    position: relative;
+    display: block;
+    width: 50px;
+    height: 50px;
+    background: pink;
+  }
+
+  .ico-list1::before {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 100%;
+    box-sizing: border-box;
+    border-top: 10px solid;
+    border-bottom: 10px solid;
+  }
+
+  .ico-list1::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    content: "";
+    width: 30px;
+    height: 100%;
+    box-sizing: border-box;
+    border-top: 5px solid;
+    border-bottom: 5px solid;
+  }
+
+  a {
+    color: #34538b;
+    font-size: 12px;
+  }
+
+  .ico-a {
+    color: #333;
+  }
+
+  .ico-a:hover {
+    color: #4D77C6;
+    text-decoration: none;
+  }
+
+  p {
+    margin: 5px 0;
+  }
+
+  .ico {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    vertical-align: -3px;
+  }
+
+  /* 以下为IE9+浏览器 */
+  :root .ico {
+    background-image: none;
+    position: relative;
+  }
+
+  .ico::before,
+  .ico::after,
+  .ico>z,
+  .ico>z::before,
+  .ico>z::after {
+    content: '';
+    position: absolute;
+  }
+
+  /* 自身为a标签，或父级包含a标签，hover时候边框色高亮 */
+  a:hover .ico::before,
+  a:hover .ico::after,
+  a:hover .ico z,
+  a:hover .ico z::before,
+  a:hover .ico z::after,
+  a.ico:hover::before,
+  a.ico:hover::after,
+  a.ico:hover z,
+  a.ico:hover z::before,
+  a.ico:hover z::after {
+    border-color: #4D77C6;
+  }
+
+  /* css3 */
+  .ico-list::before {
+    box-sizing: content-box;
+    width: 2px;
+    height: 8px;
+    border-top: 2px solid #777;
+    border-bottom: 2px solid #777;
+    top: 5px;
+    left: 2px;
+  }
+
+  .ico-list::after {
+    width: 2px;
+    border-top: 2px solid #777;
+    top: 10px;
+    left: 2px;
+  }
+
+  .ico-list z,
+  .ico-list z::before,
+  .ico-list z::after {
+    width: 11px;
+    border-top: 1px solid #626262;
+  }
+
+  .ico-list z {
+    left: 6px;
+    top: 6px;
+  }
+
+  .ico-list z::before {
+    top: 4px;
+  }
+
+  .ico-list z::after {
+    top: 9px;
+  }
+
+  .wrap {
+    display: table;
+  }
+
+  .wrap p {
+    display: table-cell;
+    min-width: 200px;
+  }
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+  <a href="#" id="btnScale" class="btn btn-blue">2倍显示</a>
+  <div class="mt20"><strong>点线攻略</strong></div>
+  <div class="wrap">
+    <p><a href="#"><i class="ico1 ico-list1">
+          <i class="z"></i>
+        </i>列表</a></p>
+
+    <p><a href="#"><i class="ico ico-list">
+          <z />
+        </i>列表</a></p>
+  </div>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>2022年8月19日</h5>
+      <p>没有设置currentColor为什么图标也跟着背景色变化?
+      </p>
+      <p>因为图标放在了a标签内部</p>
+    </blockquote>
+  </div>
+</div>
+<script>
+  if (document.querySelector) {
+    var btnScale = document.querySelector("#btnScale"), icoAll = document.querySelectorAll(".ico"), scale = 1;
+    btnScale.onclick = function () {
+      var transform = '';
+      if (scale == 1) {
+        scale = 2;
+        this.innerHTML = '比例还原';
+      } else {
+        scale = 1;
+        this.innerHTML = '2倍显示';
+      }
+
+      transform = 'scale(' + scale + ')';
+      for (var index = 0; index < icoAll.length; index++) {
+        icoAll[index].style.webkitTransform = transform;
+        icoAll[index].style.msTransform = transform;
+        icoAll[index].style.transform = transform;
+        if (window.addEventListener) {
+          icoAll[index].style.margin = "0 " + 10 * (scale - 1) + "px";
+        } else {
+          icoAll[index].style.zoom = scale;
+        }
+      }
+    }
+  }
+
+</script>

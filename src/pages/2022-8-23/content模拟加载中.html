@@ -1,0 +1,40 @@
+<title>少一些冲动和浮躁, 多一些冷静和客观</title>
+<style>
+  dot{
+    display: inline-block;
+    height:1em;
+    line-height: 1;
+    overflow: hidden;
+    vertical-align: -0.25em;
+  }
+  dot::before{
+    display: block;
+    white-space: pre;
+    content:'...\A..\A.';
+    animation: dot 3s infinite step-start;
+  }
+
+  @keyframes dot {
+    33% {transform: translateY(-2em);}
+    66% {transform: translateY(-1em);}
+  }
+
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+  正在加载中<dot>...</dot>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>标题</h5>
+      <p>伪元素插入3行内容, transform控制垂直位置
+      </p>
+      <h5>为什么使用::before ，可不可以使用::after ？</h5>
+      <p>before为了把元素往下推
+      </p>
+    </blockquote>
+  </div>
+</div>
+<script>
+
+
+</script>

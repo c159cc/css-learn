@@ -1,0 +1,80 @@
+<title>少一些冲动和浮躁, 多一些冷静和客观</title>
+<style>
+  .column-box {
+    max-width: 600px;
+    /* 不加hidden会有很多背景色 */
+    overflow: hidden;
+  }
+
+  .column-box>.column {
+    float: left;
+    height: 100%;
+    width: 30%;
+    /*往上 缩小可用空间*/
+    margin-bottom: -399px;
+    /*往下*/
+    padding-bottom: 399px;
+    border:1px solid red;
+  }
+
+  .btn-box {
+    max-width: 600px;
+    margin: 20px 0;
+  }
+
+  .btn-box::after {
+    content: '';
+    display: block;
+    clear: both
+  }
+
+  .btn-box>button {
+    float: left;
+    width: 30%;
+  }
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+  <div class="column-box">
+    <div class="column" id="c1" style="background:pink;">
+      <p>1</p>
+    </div>
+    <div class="column" id="c2" style="background:skyblue;">
+      <p>1</p>
+      <p>2</p>
+    </div>
+    <div class="column" id="c3" style="background:#f0f3f9;">
+      <p>1</p>
+      <p>2</p>
+      <p>3</p>
+    </div>
+  </div>
+  <div class="btn-box">
+    <button id="btn1">增加观点</button>
+    <button id="btn2">增加观点</button>
+    <button id="btn3">增加观点</button>
+  </div>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>负margin如何影响外部尺寸?</h5>
+      <p>ul的负margin增大了ul的尺寸, 因为ul的父元素定宽, 充分利用可用空间
+      </p>
+      <p>这里, btn-box的高度不固定, 正margin增大外部尺寸, 负margin缩小外部尺寸, 下面的元素上移, 使用padding-bottom将它推下去</p>
+      <h5>padding所到之处都是有背景色的, 负margin缩小尺寸之后为什么背景色还在?</h5>
+      <p>padding改变了offsetHeight, padding增大了内部尺寸, 是实实在在增大了, margin只是减小了外部尺寸, 影响布局</p>
+    </blockquote>
+  </div>
+</div>
+<script>
+  function addItem(ele) {
+    return function () {
+      let p = document.createElement('p')
+      p.innerHTML = "观点"
+      ele.appendChild(p)
+    }
+  }
+
+  btn1.onclick = addItem(c1)
+  btn2.onclick = addItem(c2)
+  btn3.onclick = addItem(c3)
+</script>
