@@ -1,0 +1,90 @@
+<title>点线实现</title>
+<style>
+  .box {
+    background: #cd0000;
+    padding: 10px;
+  }
+
+  .box>img {
+    float: left;
+  }
+
+  .clear::after {
+    content: "";
+    clear: both;
+  }
+
+  .clear-block::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+
+  .clear-table::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .clear-list-item::after {
+    content: "";
+    display: list-item;
+    clear: both;
+  }
+
+
+  .constr {
+    margin: 0 auto;
+    text-align: left;
+  }
+
+  .constr:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+
+  .demo pre {
+    padding: 10px 1em;
+    margin: 1em 0;
+    border: 1px dashed #ccc;
+  }
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+
+  <div class="demo">
+    <div class="constr">
+      <div id="box" class="box clear">
+        <img src="/config/images/1.jpg" alt="">
+      </div>
+    </div>
+    <div class="constr">
+      <pre>
+      .clear::after{
+        content: "";
+        display: <select id="select">
+      <option value>请选择</option>
+      <option value="block">block</option>
+      <option value="table">table</option>
+      <option value="list-item">list-item</option>
+        </select>;
+        clear: both;
+      }
+        </pre>
+    </div>
+
+  </div>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>清除浮动的原理</h5>
+      <p>浮动元素增加块级兄弟元素, 防止父元素塌陷
+      </p>
+    </blockquote>
+  </div>
+</div>
+<script>
+  select.onchange = function () {
+    box.className = 'box clear-' + this.value
+  }
+</script>

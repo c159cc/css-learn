@@ -1,0 +1,49 @@
+<title>少一些冲动和浮躁, 多一些冷静和客观</title>
+<style>
+  .box {
+    line-height: 20px;
+  }
+
+  .icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url(/config/images/delete.png) no-repeat;
+    letter-spacing: -1em;
+    /* text-indent: -999em; */
+    vertical-align: baseline;
+  }
+  .icon::before{
+    content: "\3000x";
+  }
+  .large{
+    font-size: 40px;
+  }
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+  <div class="box">
+    <h4>空标签后面跟随文本</h4>
+    <p><i class="icon"></i>删除</p>
+    <h4>空标签包含文本</h4>
+    <p><i class="icon">删除</i></p>
+    <h4>letter-spacing:-1em;</h4>
+    <p><i style="letter-spacing:-1em;">删除文本</i></p>
+    <h4>字体变大</h4>
+    <h4>空标签后面跟随文本</h4>
+    <p class="large"><i class="icon"></i>删除</p>
+    <h4>空标签包含文本</h4>
+    <p class="large"><i class="icon">删除</i></p>
+  </div>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>letter-spacing:-1em;</h5>
+      <p>所有文字重合
+      </p>
+    </blockquote>
+  </div>
+</div>
+<script>
+
+
+</script>

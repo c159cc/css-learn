@@ -1,0 +1,66 @@
+<title>少一些冲动和浮躁, 多一些冷静和客观</title>
+<style>
+  img {
+    width: 256px;
+    height: 192px;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+  }
+
+  img::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #f0f3f9;
+  }
+
+  img::after {
+    content: attr(alt);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    font-size: 14px;
+    line-height: 30px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    transform: translateY(100%);
+    transition: transform .2s;
+  }
+
+  img:hover::after {
+    transform: translateY(0);
+  }
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+  <img id="img1" data-src="/config/images/1.jpg" alt="美女思考图">
+  <p><button id="btn1">设置src属性显示图片</button></p>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>为什么没有显示图片?</h5>
+      <p>因为地址被react转义了的
+      </p>
+    </blockquote>
+  </div>
+</div>
+<script>
+  if (img1 && btn1) {
+    var initBtnValue = btn1.innerHTML;
+    var srcImg = img1.getAttribute('data-src')
+    btn1.onclick = function () {
+      if (btn1.innerHTML === initBtnValue) {
+        btn1.innerHTML = '删除src属性'
+        img1.setAttribute('src', srcImg)
+      } else {
+        btn1.innerHTML = initBtnValue
+        img1.removeAttribute('src')
+      }
+    }
+  }
+
+</script>

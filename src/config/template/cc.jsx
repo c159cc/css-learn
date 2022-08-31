@@ -9,6 +9,7 @@ import IScroll from '@/config/js/iscroll'
 import { useEffect } from "react";
 
 export default function IndexPage(props) {
+  console.log("ccdbeug ", props)
   const demo1_value = require('@/pages' + props.route.path)
   const dom = parse(demo1_value)
   const strTitle = dom[0].props.children;
