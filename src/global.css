@@ -5,3 +5,6 @@
 .part * {
   box-sizing: content-box;
 }
+img{
+  vertical-align: baseline;
+}

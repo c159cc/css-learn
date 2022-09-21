@@ -1,0 +1,63 @@
+<title>少一些冲动和浮躁, 多一些冷静和客观</title>
+<style>
+  .demo {
+    width: 380px;
+    height: 200px;
+    margin: 10px auto;
+    border: 1px solid #ccc;
+    /* 产生堆叠上下文 */
+    position: relative;
+    z-index: 0;
+    background: red;
+    padding: 0;
+    font-size: 50px;
+  }
+
+  .demo::after{
+    content: "";
+    display: block;
+    clear: both;
+  }
+
+  .inline-block {
+    float:left;
+    width: 100%;
+    height: 100%;
+    background: yellow;
+    color:blue;
+    /* opacity: 0.9; */
+  }
+
+  .block {
+    margin-left: 20px;
+    height: 100%;
+    width: 100%;
+    background: orange;
+    color:black;
+    margin-top: -200px;
+  }
+  .foo{
+    width: 100%;
+    height: 100%;
+    margin-left: 20px;
+
+    border:5px solid green;
+  }
+
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+  <div class="demo">
+    <div class="foo"><div class="inline-block">inline block文本</div></div>
+    <div class="block">inline block文本-block</div>
+  </div>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>block在后, block文字围绕在float周围</h5>
+    </blockquote>
+  </div>
+</div>
+<script>
+
+
+</script>

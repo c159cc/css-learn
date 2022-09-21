@@ -1,0 +1,78 @@
+<title>少一些冲动和浮躁, 多一些冷静和客观</title>
+<style>
+  .foo {
+    width: 200px;
+    height: 200px;
+    border: 10px solid;
+  }
+
+  .a {
+    position: fixed;
+    color: red;
+    width: 300px;
+  }
+
+  .boo {
+    width: 50px;
+    height: 100px;
+    background: pink;
+    float:left;
+    position: relative;
+  }
+  .boo1 {
+    width: 50px;
+    height: 50px;
+    background: skyblue;
+    float:left;
+    margin-left: -20px;
+  }
+  .b {
+    position: absolute;
+    width: 400px;
+    color: orange;
+  }
+
+  .c {
+    position: relative;
+    color: yellow;
+    /* z-index: 0; */
+  }
+
+  .d {
+    width: 400px;
+    position: sticky;
+    color: green;
+    margin-top: -200px;
+  }
+
+  .e {
+    color: blue;
+    width: 400px;
+    margin-top: -200px;
+  }
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+  <div class="foo a">
+
+  </div>
+  <div class="foo b"></div>
+  <div class="foo c">
+    <div class="boo"></div>
+    <div class="boo1"></div>
+  </div>
+  <div class="foo d"></div>
+  <div class="foo e"></div>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>fixed,absolute,relative的相对优先级</h5>
+      <p>蓝色是static定位的元素, 位于所有定位元素之下
+      </p>
+      <p>relative中的定位元素参与父亲层叠上下文</p>
+    </blockquote>
+  </div>
+</div>
+<script>
+
+
+</script>

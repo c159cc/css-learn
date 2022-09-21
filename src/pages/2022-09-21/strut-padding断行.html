@@ -1,0 +1,34 @@
+<title>少一些冲动和浮躁, 多一些冷静和客观</title>
+<style>
+  .box1 {
+    width: 200px;
+    border: 2px dashed #cd0000;
+    margin: 200px auto;
+  }
+
+  .txt {
+    display: inline;
+    padding: 50%;
+    background-color: gray;
+  }
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+
+  <div class="box1">
+    <div class="txt">内有文字若干</div>
+  </div>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>padding断行原理?</h5>
+      <p>
+        padding来自于宽度, 左右50%的padding完全占据了宽度, 有一个字符都会导致文本换行
+      </p>
+      <p>换行的核心, txt为inline元素, 必须是inline不能是inline-block, 因为只有inline元素才会发生padding中断</p>
+    </blockquote>
+  </div>
+</div>
+<script>
+
+
+</script>

@@ -1,0 +1,36 @@
+<title>少一些冲动和浮躁, 多一些冷静和客观</title>
+<style>
+  .box {
+    width: 280px;
+    outline: 1px solid red;
+    text-align: center;
+    /* font-size: 0; */
+    /* line-height: 0; */
+  }
+
+  .box>img {
+    height: 96px;
+    vertical-align: middle;
+  }
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+  <div class="box">x<img src="/config/images/1.jpg" alt=""></div>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>图片撑大了行框, 那么行框的高度为多少呢?</h5>
+      <p>猜想, 行框高度不在等分
+      </p>
+      <h5>设置图片的vertical-align:middle;为什么文字往上跑?</h5>
+      <p>文字上跑之后行框的基线在哪儿? 行框不存在基线, x这个strut的基线在底部</p>
+      <p>行框的基线由font-size, line-height决定</p>
+      <h5>行框的middle线由谁决定?</h5>
+      <p>行框的line-height依然上下等分</p>
+
+    </blockquote>
+  </div>
+</div>
+<script>
+
+
+</script>
