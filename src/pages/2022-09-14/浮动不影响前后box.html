@@ -1,0 +1,40 @@
+<title>少一些冲动和浮躁, 多一些冷静和客观</title>
+<style>
+  .demo .boo {
+    border: 1px solid red;
+    height: 50px;
+  }
+
+  .demo::after{
+    content: "";
+    display: block;
+    clear: both;
+  }
+  .foo {
+    float: left;
+    height: 40px;
+    width: 50%;
+    background: pink;
+
+  }
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+  <div class="demo">
+    <div class="boo">abcd</div>
+    <div class="foo">sdf23</div>
+    <div class="boo">abcd</div>
+  </div>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>浮动脱离文档流</h5>
+      <p>两个boo元素紧紧的挨在一起, 好像中间不存在float一样
+      </p>
+      <p>解答</p>
+    </blockquote>
+  </div>
+</div>
+<script>
+
+
+</script>

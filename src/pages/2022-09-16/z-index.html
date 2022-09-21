@@ -1,0 +1,77 @@
+<title>少一些冲动和浮躁, 多一些冷静和客观</title>
+<style>
+  .demo {
+    width: 380px;
+    height: 200px;
+    margin: 10px auto;
+    border: 1px solid #ccc;
+    /* 产生堆叠上下文 */
+    position: relative;
+    z-index: 0;
+    background: red;
+  }
+
+  .ne-zidx {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: orange;
+    border: 1px solid red;
+  }
+
+  .in-flow {
+    height: 100%;
+    background: yellow;
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+
+  .float {
+    float: left;
+    width: 100%;
+    height: 100%;
+    background: green;
+    margin-top:40px;
+    margin-left:40px;
+  }
+  .inline-block{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background: cyan ;
+    margin-top: -1000px;
+  }
+  .new-stack{
+    position: relative;
+    top:-360px;
+    left:60px;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    background: blue;
+  }
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+  <div class="demo">
+
+    <div class="ne-zidx"></div>
+    <div class="float"></div>
+    <div class="in-flow"></div>
+    <div class="inline-block">asf</div>
+    <div class="new-stack"></div>
+  </div>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>标题</h5>
+      <p>qa?
+      </p>
+      <p>解答</p>
+    </blockquote>
+  </div>
+</div>
+<script>
+
+
+</script>

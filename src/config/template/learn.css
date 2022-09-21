@@ -1,0 +1,170 @@
+/*
+===========================1 背景镂空技术===========================
+两个伪元素协作
+伪元素的定位和宽高
+background-position控制位置
+ */
+
+.icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  position: relative;
+}
+
+.icon::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: currentColor;
+}
+
+.icon::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-image: url(/config/images/sprite_icons.png);
+}
+
+.icon1::after {
+  /* 背景图左移20px */
+  background-position: -20px 0;
+}
+
+/* ===========================2 点效果=========================== */
+.ico-list1::before {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  width: 10px;
+  height: 100%;
+  border-top: 10px solid;
+  border-bottom: 10px solid;
+}
+
+/* ===========================3 min-width可以突破flex收缩=========================== */
+.fa {
+  display: flex;
+  width: 100px;
+}
+
+/* 显示为200px */
+.son {
+  display: block;
+  min-width: 200px;
+}
+
+/* ===========================4 文本子元素溢出父元素=========================== */
+.father {
+  width: 100px;
+  white-space: nowrap;
+}
+
+.child {
+  /* 增大父元素 */
+  display: inline-block;
+  /* 视觉溢出父元素 */
+  display: inline;
+  padding: 5px;
+  background: #f0f3f9;
+}
+
+/* ===========================5 图片滚动=========================== */
+/* 3层元素,第二层的absolute,nowrap */
+.wrap {
+  width: 300px;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+}
+
+.wrap>ul {
+  position: absolute;
+  padding: 0;
+  white-space: nowrap;
+}
+
+.wrap>ul li {
+  display: inline-block;
+}
+
+/* ===========================6 文字少居中,多居左=========================== */
+/* 我能想到的是,换行的时候修改fa的text-align, 但是css没有if控制,通过增加标签实现
+fa控制son居中,son控制里面的文本居左,对于son内的文本来说,先居中后居左,当son增加到和
+fa一样宽的时候居中效果消失
+文字少居左不起用,文字多居中不起用
+if else 效果可以转化为, 文字少居左无效, 文字多居中无效
+*/
+.fa {
+  text-align: center;
+}
+
+.son {
+  /* 利用inline-block的包裹性 */
+  display: inline-block;
+  text-align: left;
+}
+
+/* ===========================7 border介于margin和padding之间=========================== */
+.nav-a {
+  display: block;
+  margin: 0 10px;
+  padding: 9px 10px;
+  border-top: 1px solid #de3636;
+  border-bottom: 1px solid #b70000;
+  color: #fff;
+}
+
+/* ===========================8 父元素包裹,子元素取父元素宽度=========================== */
+/* 如何计算父元素宽度: 计算父元素宽度的时候取子元素font-size的宽度 */
+.box {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.text {
+  width: 100%;
+  display: inline-block;
+}
+
+/* ===========================9 清除浮动=========================== */
+/* 浮动元素增加块级兄弟元素, 防止浮动元素父元素高度塌陷 */
+.clear-block::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+
+/* ===========================10 单个文字右对齐=========================== */
+/* 比如凹凸文字的实现 */
+.tu {
+  direction: rtl;
+}
+
+/* ===========================11 content多个计数器同时命名=========================== */
+.counter {
+  counter-reset: wangxiaoer 2 wangxiaosan 3;
+}
+
+.counter::before {
+  /* 2 */
+  content: counter(wangxiaoer)
+}
+
+.counter::after {
+  /* 3 */
+  content: counter(wangxiaosan)
+}
+
+/* ===========================12 content将标题文本替换为图片=========================== */
+.h1 {
+  content: url('/config/images/photographer.jpg')
+}
+
+/* ===========================13 content替换src=========================== */
+img:hover {
+  content: url('/config/images/photographer.jpg')
+}

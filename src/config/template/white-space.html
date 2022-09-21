@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<style>
+.show{
+  width: 240px;
+}
+.show div{
+  border:1px solid red;
+  margin: 10px;
+}
+</style>
+</head>
+<body>
+  <div class="show">
+    normal<div style="white-space: normal;">这里有10个          空格,
+      这之前是一个换行符,这里有一个显示换行符\r\n的</div>
+    nowrap<div style="white-space: nowrap;">这里有10个          空格,
+      这之前是一个换行符,这里有一个显示换行符\r\n的</div>
+    pre-line<div style="white-space: pre-line;">这里有10个          空格,
+      这之前是一个换行符,这里有一个显示换行符\r<span style="white-space: pre-line;">\n</span>的          </div>
+    pre-wrap<div style="white-space: pre-wrap;">这里有10个          空格,
+      这之前是一个换行符,这里有一个显示换行符\r<span style="white-space: pre-line;">\n</span>的         </div>
+      pre<div style="white-space: pre;">这里有10个         空格,
+        这之前是一个换行符,这里有一个显示换行符\r\n的</div>
+  </div>
+</body>
+</html>

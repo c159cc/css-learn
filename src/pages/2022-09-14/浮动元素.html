@@ -1,0 +1,61 @@
+<title>少一些冲动和浮躁, 多一些冷静和客观</title>
+<style>
+  .left {
+    float: left;
+    width: 50px;
+    height: 100px;
+    border: 1px solid red;
+  }
+  .foo{
+    width: 200px;
+    text-align: left;
+    background: pink;
+  }
+
+  .foo::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+  .cc{
+    display: inline-block;
+  }
+
+  .re{
+    position: relative;
+  }
+  .absolute{
+    position: absolute;
+    background: white;
+    width: 60px;
+  }
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+  <h4>浮动元素在行框盒子外部</h4>
+  <div class="foo">
+    <div class="left">left</div>
+    <div>少一 </div>
+  </div>
+  <h4>验证line-box内部是否可以存在absolute</h4>
+  <div class="foo re">
+    <div class="absolute">left</div>
+    <div class="cc">少一</div>
+  </div>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>如何标识行框盒子?</h5>
+      <p>行框盒子内部可以包含浮动元素吗? 怎么证明?
+      </p>
+      <p>浮动创建了新的上下文, 行框盒子内部不存在浮动元素</p>
+      <h5>line box可以包含什么元素, 元素浮动之后就从line box出去了?</h5>
+      <p>是不是格式化上下文导致的?</p>
+      <p>absolute脱离了文档流, 不存在于line-box中</p>
+      <p>不是格式化上下文导致的, 是float自己的特性</p>
+    </blockquote>
+  </div>
+</div>
+<script>
+
+
+</script>

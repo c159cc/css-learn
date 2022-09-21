@@ -1,0 +1,55 @@
+<title>css对文本的控制</title>
+<style>
+.icon{
+  display: inline-block;
+  box-sizing: content-box;
+  width: 16px;
+  height: 20px;
+  border:1px solid red;
+  position: relative;
+  color:red;
+}
+.icon1::before{
+
+    content: '█';
+    position: absolute;
+    font-size: 50px;
+    /* margin影响文本的位置 */
+    margin-top: -10px;
+    padding: 10px;
+    border:1px solid blue;
+}
+.icon2{
+
+    margin-top: -100px;
+    /* padding: 10px; */
+    border:1px solid blue;
+}
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+  <div class="show">
+    <div class="demo">
+      更改颜色: <input type="color">
+      <div class="icons">
+        x <i class="icon icon1"></i>返回
+        <i class="icon icon2">█</i>刷新
+        <i class="icon icon3"></i>收藏
+        <i class="icon icon4"></i>展开
+      </div>
+    </div>
+  </div>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>css对字体位置和大小的控制</h5>
+      <p>字体大小只由font-size决定, font-family决定字体在内容框的布局和样子
+      </p>
+      <h5>padding和margin对字体的控制</h5>
+      <p>padding在4个方向均有效,margin只有水平方向有效, 用来调整位置</p>
+    </blockquote>
+  </div>
+</div>
+<script>
+
+
+</script>
