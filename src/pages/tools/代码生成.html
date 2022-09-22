@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .wrap {
+      display: flex;
+      justify-content: flex-start;
+    }
+
+    .foo {
+      width: 200px;
+      height: 200px;
+      margin-left: 20px;
+    }
+
+    .f1 {
+      background: pink;
+    }
+
+    .f2 {
+      background: skyblue;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="foo f1"></div>
+    <div class="foo f2"></div>
+  </div>
+  <script>
+    const str = `{"浊度","Turbidity"},//0"浊度"浓度单位：NTU浊度无需调零
+{"色度-LR","Color-LR"},//1"色度-LR"浓度单位：PCU
+{"色度-HR","Color-HR"},//2"色度-HR"浓度单位：PCU
+{"余氯-HR","ResidualChlorine-HR"},//3"余氯-HR"浓度单位：mg/L
+{"总氯-HR","TotalChlorine-HR"},//4"总氯-HR"浓度单位：mg/L
+{"二氧化氯-LR","ChlorineDioxide-LR"},//5"二氧化氯-LR"浓度单位：mg/L
+{"臭氧-DPD-HR","Ozone(DPD)-HR"},//6"臭氧-DPD-HR"浓度单位：mg/L
+{"溶解氧","DissolvedOxygen"},//7"溶解氧"浓度单位：mg/L
+{"总铬","TotalChromium"},//8"总铬"浓度单位：mg/L
+{"六价铬","HexavalentCr"},//9"六价铬"浓度单位：mg/L
+{"氨氮-S","NH3-N(Salicylic)"},//10"氨氮-S"浓度单位：mg/L
+{"氨氮-Ns-6","NH3-N(Ns)-6"},//11"氨氮-Ns-6"浓度单位：mg/L
+//{"氨氮-Ns-60","NH3-N(Ns)-60"},//12"氨氮-Ns-60"浓度单位：mg/L
+{"亚硝酸盐氮","NitriteNitrogen"},//13"亚硝酸盐氮"浓度单位：mg/L
+{"硝酸盐氮","NO3-HR"},//14"硝酸盐氮"浓度单位：mg/L
+{"铁","Iron"},//15"铁"浓度单位：mg/L
+{"铝","Aluminum"},//16"铝"浓度单位：mg/L
+{"锌","Zinc"},//17"锌"浓度单位：mg/L
+{"铍","Beryllium"},//18"铍"浓度单位：mg/L
+{"银","Silver"},//19"银"浓度单位：mg/L
+{"铅","Lead"},//20"铅"浓度单位：mg/L
+{"钴","Cobalt"},//21"钴"浓度单位：mg/L
+{"铜","Copper"},//22"铜"浓度单位：mg/L
+{"镍","Nickel"},//23"镍"浓度单位：mg/L
+{"钡","Barium"},//24"钡"浓度单位：mg/L
+{"镉","Cadmium"},//25"镉"浓度单位：mg/L
+{"锰（甲醛肟法）","Mn(Formaldoxime)"},//26"锰（甲醛肟法）"浓度单位：mg/L
+{"硼","Boron"},//27"硼"浓度单位：mg/L
+{"碘","Iodine"},//28"碘"浓度单位：mg/L
+{"硫酸盐","Sulfate"},//29"硫酸盐"浓度单位：mg/L
+{"硅酸盐","Silicate"},//30"硅酸盐"浓度单位：mg/L
+{"磷酸盐","Phosphate"},//31"磷酸盐"浓度单位：mg/L
+{"氯化物","Chloride"},//32"氯化物"浓度单位：mg/L
+{"氰化物","Cyanide"},//33"氰化物"浓度单位：mg/L
+{"氟化物","Fluoride"},//34"氟化物"浓度单位：mg/L
+{"硫化物","Sulfide"},//35"硫化物"浓度单位：mg/L
+{"甲醛","Formaldehyde"},//36"甲醛"浓度单位：mg/L
+{"联氨","Hydrazine"},//37"联氨"浓度单位：mg/L
+{"有效氯-MR","AVLCl-MR"},//38"有效氯-MR"浓度单位：mg/L
+{"有效氯-HR","AVLCl-HR"},//39"有效氯-HR"浓度单位：%
+{"镁硬度-LR","MgHard.-LR"},//40"镁硬度-LR"浓度单位：mg/L
+{"镁硬度-HR","MgHard.-HR"},//41"镁硬度-HR"浓度单位：mg/L
+{"钙硬度-LR","CaHard.-LR"},//42"钙硬度-LR"浓度单位：mg/L
+{"钙硬度-HR","CaHard.-HR"},//43"钙硬度-HR"浓度单位：mg/L
+{"总硬度-LR","TotalHard.-LR"},//44"总硬度-LR"浓度单位：mg/L
+{"总硬度-HR","TotalHard.-HR"},//45"总硬度-HR"浓度单位：mg/L
+{"高锰酸盐指数-KI","PermanganateIndex-KI"},//46"高锰酸盐指数-KI"浓度单位：mg/L
+{"COD-2H-LR","COD-2H-LR"},//47"COD-2H-LR"浓度单位：mg/L
+{"COD-2H-HR","COD-2H-HR"},//48"COD-2H-HR"浓度单位：mg/L
+//{"COD-2H-ER","COD-2H-ER"},//49"COD-2H-ER"浓度单位：mg/L
+{"COD-15-LR","COD-15-LR"},//50"COD-15-LR"浓度单位：mg/L
+{"COD-15-HR","COD-15-HR"},//51"COD-15-HR"浓度单位：mg/L
+//{"COD-15-ER","COD-15-ER"},//52"COD-15-ER"浓度单位：mg/L
+{"总碱度","TotalAlkalinity"},//53"总碱度"浓度单位：mg/L
+{"总磷-LR","TP-LR"},//54"总磷-LR"浓度单位：mg/L
+{"总磷-HR","TP-HR"},//55"总磷-HR"浓度单位：mg/L
+{"总氮-25","TN-25"},//56"总氮-25"浓度单位：mg/L
+//{"总氮-100","TN-100"},//57"总氮-100"浓度单位：mg/L
+{"悬浮物-LR","SS-LR"},//58"悬浮物-LR"浓度单位：mg/L
+{"悬浮物-HR","SS-HR"},//58"悬浮物-HR"浓度单位：mg/L
+{"COD-LR-QSJ","COD-LR-QSJ"},//59"COD-LR-QSJ"浓度单位：mg/L
+{"COD-HR-QSJ","COD-HR-QSJ"},//60"COD-HR-QSJ"浓度单位：mg/L
+{"COD-QSJ","COD-QSJ"},//61"COD-QSJ"浓度单位：mg/L
+{"COD-MR-QSJ","COD-MR-QSJ"},//62"COD-MR-QSJ"浓度单位：mg/L
+{"TP-LR-QSJ","TP-LR-QSJ"},//63"TP-LR-QSJ"浓度单位：mg/L
+{"TP-HR-QSJ","TP-HR-QSJ"},//64"TP-HR-QSJ"浓度单位：mg/L
+{"TN-LR-QSJ","TN-LR-QSJ"},//65"TN-LR-QSJ"浓度单位：mg/L
+{"TN-HR-QSJ","TN-HR-QSJ"},//66"TN-HR-QSJ"浓度单位：mg/L
+{"COD-LR-HKM","COD-LR-HKM"},//59COD-LR-HKM浓度单位：mg/L
+{"COD-HR-HKM","COD-HR-HKM"},//60COD-HR-HKM浓度单位：mg/L
+{"COD-HKM","COD-HKM"},//61COD-HKM浓度单位：mg/L
+{"COD-MR-HKM","COD-MR-HKM"},//62COD-MR-HKM浓度单位：mg/L
+{"TP-LR-HKM","TP-LR-HKM"},//63TP-LR-HKM浓度单位：mg/L
+{"TP-HR-HKM","TP-HR-HKM"},//64TP-HR-HKM浓度单位：mg/L
+{"TN-LR-HKM","TN-LR-HKM"},//65TN-LR-HKM浓度单位：mg/L
+{"TN-HR-HKM","TN-HR-HKM"},//66TN-HR-HKM浓度单位：mg/L
+{"COD-A-LZ","COD-A-LZ"},//67COD-A-LZ浓度单位：mg/L
+{"COD-B-LZ","COD-B-LZ"},//68COD-B-LZ浓度单位：mg/L
+{"COD-C-LZ","COD-C-LZ"},//69COD-C-LZ浓度单位：mg/L
+{"COD-D-LZ","COD-D-LZ"},//70COD-D-LZ浓度单位：mg/L
+{"TP-LR-LZ","TP-LR-LZ"},//71TP-LR-LZ浓度单位：mg/L
+{"TP-HR-LZ","TP-HR-LZ"},//72TP-HR-LZ浓度单位：mg/L
+{"TN-LR-LZ","TN-LR-LZ"},//73TN-LR-LZ浓度单位：mg/L
+{"TN-HR-LZ","TN-HR-LZ"},//74TN-HR-LZ浓度单位：mg/L
+`
+
+    var arr = str.split('\n');
+    var pattern = /\{\"(.*)\"\,\"(.*)\"\}\,.*浓度单位：(.*)/
+    var res = []
+    arr.forEach(item => {
+      let rst = pattern.exec(item);
+      if (rst?.length === 4) {
+        res.push(rst.slice(1))
+      }
+    })
+
+    // console.log(res)
+
+
+    const map = `2000	浊度
+2010	色度
+2011	色度-LR
+2012	色度-HR
+2020	pH
+2021	pH-HR
+2022	pH-LR
+2030	余氯
+2031	余氯-LR
+2032	余氯-HR
+2040	总氯
+2041	总氯-LR
+2042	总氯-HR
+2050	一氯胺
+2051	一氯胺-LR
+2052	一氯胺-HR
+2060	化合性余氯
+2070	二氧化氯
+2071	二氧化氯-LR
+2072	二氧化氯-HR
+2080	亚氯酸盐
+2081	亚氯酸盐-LR
+2082	亚氯酸盐-HR
+2090	臭氧
+2091	臭氧-IND
+2092	臭氧-DPD-LR
+2093	臭氧-DPD-HR
+2094	臭氧-IND-LR
+2095	臭氧-IND-HR
+20A0	活性氧
+20A1	活性氧-LR
+20A2	活性氧-HR
+20B0	溶解氧
+20C0	总铬
+20D1	三价铬
+20E0	六价铬
+20F0	氨氮
+20F1	氨氮-S
+20F2
+20F3	氨氮-Ns-6
+20F4	氨氮-Ns-12
+20F5	氨氮-Ns-30
+20F6	氨氮-Ns-60
+2100	亚硝酸盐氮
+2110	硝酸盐氮
+2120	铁
+2121	铁
+2130	铝
+2140	锌
+2150	铍
+2160	银
+2170	钼
+2180	钼酸盐
+2190	铅
+21A0	钴
+21B0	铜
+21C0	镍
+21D0	钡
+21E0	镉
+21F0	锰
+21F1	锰-甲醛肟法
+21F2	锰-高碘酸钾法
+2200	钛
+2210	钾
+2220	硼
+2230	碘
+2240	溴
+2250	氯酸盐
+2260	硫酸盐
+2270	亚硫酸盐
+2280	硅酸盐
+2290	磷酸盐
+22A0	氯化物
+22B0	氰化物
+22C0	氟化物
+22D0	硫化物
+22E0	挥发酚
+22F0	过氧化氢
+2300	氰尿酸
+2310	尿素
+2320	甲醛
+2330	联氨
+2340	有效氯
+2341	有效氯-LR
+2342	有效氯-HR
+2343	有效氯-MR
+2350	镁硬度
+2351	镁硬度-LR
+2352	镁硬度-HR
+2360	钙硬度
+2361	钙硬度-LR
+2362	钙硬度-HR
+2370	总硬度
+2371	总硬度-LR
+2372	总硬度-HR
+2380	高锰酸盐指数-KI
+2381	高锰酸盐指数-FE
+2390	COD
+2391	COD-2H-LR
+2392	COD-2H-HR
+2393	COD-2H-ER
+2394	COD-15-LR
+2395	COD-15-HR
+2396	COD-15-ER
+2397	COD-LR-HKM
+2398	COD-HR-HKM
+2399	COD-MR-HKM
+239A	COD-HKM
+239B	COD-A-LZ
+239C	COD-B-LZ
+239D	COD-C-LZ
+239E	COD-D-LZ
+23A0	总碱度
+23B0	总磷
+23B1	总磷-LR
+23B2	总磷-HR
+23B3	TP-LR-HKM
+23B4	TP-HR-HKM
+23B5	TP-LR-QSJ
+23B6	TP-HR-QSJ
+23B7	TP-LR-LZ
+23B8	TP-HR-LZ
+23C0	总氮
+23C1	总氮-25
+23C2	总氮-100.0
+23C3	TN-LR-HKM
+23C4	TN-HR-HKM
+23C5	TN-LR-QSJ
+23C6	TN-HR-QSJ
+23C7	TN-LR-LZ
+23C8	TN-HR-LZ
+23D0	悬浮物
+23D1	悬浮物-LR
+23D2	悬浮物-HR
+23E0	保留
+23F0	COD-QSJ
+23F1	COD-LR-QSJ
+23F2	COD-HR-QSJ
+23F3	COD-MR-QSJ
+2400	TOC
+2401	TOC-L
+2402	TOC-H
+`
+    var mapArr = map.split('\n')
+    var mapRes = {}
+    mapArr.forEach(item => {
+      let strObj = item.split('\t');
+      if (strObj?.length === 2) {
+        mapRes[strObj[1]] = strObj[0]
+      }
+    })
+    // console.log(mapRes)
+
+
+    const compose = (no, zh, en, unit) => {
+      const template = `m_mapItemName.insert(pair<short, InfoItem>(0x${no}, InfoItem("${zh}", "${en}", "${unit}")));`
+      return template;
+    }
+
+    const response = []
+    res.forEach(item => {
+      if (item.length === 3) {
+        response.push(compose(mapRes[item[0]], item[0], item[1], item[2]))
+      }
+    })
+
+    console.log(response.join("\n"))
+  </script>
+</body>
+
+</html>
