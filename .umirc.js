@@ -23,5 +23,6 @@ export default defineConfig({
     headerRender:false
   },
   fastRefresh: {},
+  mfsu:{}
   // links: ['@/config/css/demo.css', '@/config/css/hl.css']
 });

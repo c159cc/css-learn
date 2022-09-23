@@ -1,0 +1,70 @@
+<title>少一些冲动和浮躁, 多一些冷静和客观</title>
+<style>
+  .cc {
+    width: 380px;
+    border: 1px solid blue;
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  .cc>div {
+    border: 1px solid red;
+    flex: 1 100%;
+  }
+
+  @media all and (min-width:1200px) {
+    .cc>.aside {
+      flex: 1 auto;
+      background: pink;
+    }
+  }
+
+  @media all and (min-width:1400px) {
+    .cc>.main {
+      flex: 3 auto;
+      background: blue;
+    }
+
+    .header {
+      order: 1;
+    }
+
+    .aside1 {
+      order: 2;
+    }
+
+    .main {
+      order: 3;
+    }
+
+    .aside2 {
+      order: 4;
+    }
+
+    .footer {
+      order: 5;
+    }
+  }
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+  <div class="cc">
+    <div class="header">header</div>
+    <div class="main">main </div>
+    <div class="aside aside1">aside1</div>
+    <div class="aside aside2">aside2</div>
+    <div class="footer">footer</div>
+  </div>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>标题</h5>
+      <p>qa?
+      </p>
+      <p>解答</p>
+    </blockquote>
+  </div>
+</div>
+<script>
+
+
+</script>

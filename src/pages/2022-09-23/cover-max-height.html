@@ -1,0 +1,56 @@
+<title>少一些冲动和浮躁, 多一些冷静和客观</title>
+<style>
+  .cc {
+    border: 1px solid red;
+    /* 符合比例 */
+    width: 450px;
+    height: 180px;
+
+  }
+
+  .width2 {
+    /* 宽度减少150, 裁剪的不是右边而是两边 */
+    width: 300px;
+  }
+
+  .cc>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .img2>img {
+    height: auto;
+    max-height: 100%;
+  }
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+  <h4>原图为1500*600, 这里是450*180宽高比符合比例</h4>
+  <div class="cc">
+    <img src="/config/images/photographer.jpg">
+  </div>
+  <h4>300*180, 图片横边会被裁剪</h4>
+  <div class="cc width2">
+    <img src="/config/images/photographer.jpg">
+  </div>
+  <h4>300*180, height改为max-height</h4>
+  <div class="cc width2 img2">
+    <img src="/config/images/photographer.jpg">
+  </div>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>max-height的意义</h5>
+      <p>如果容器高度固定宽边不够的情况,图片横向一定会被裁剪
+      </p>
+      <p>高度不固定, 图片的宽度就不会溢出容器, 为什么?</p>
+      <p>
+        因为高度可变, 图片缩放的时候一定是宽度先填充满容器, 此时要么高度不够, 裁剪, 高度有多, 高度满足max-height为100%; 如果高度设为固定值, 那么图片没有撑满容器会放大图片, 图片宽度就超过容器了, 就被裁减了.
+      </p>
+    </blockquote>
+  </div>
+</div>
+<script>
+
+
+</script>

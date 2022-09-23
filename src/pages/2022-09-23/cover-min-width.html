@@ -1,0 +1,68 @@
+<title>少一些冲动和浮躁, 多一些冷静和客观</title>
+<style>
+  .cc {
+    border: 1px solid red;
+    /* 符合比例 */
+    width: 450px;
+    height: 180px;
+
+  }
+
+  .cc>img {
+    min-width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .cc1,
+  .cc2 {
+    border: 1px solid red;
+    /* 宽度减少150, 裁剪的不是右边而是两边  */
+    width: 300px;
+    height: 180px;
+    /* overflow: hidden; */
+  }
+
+  .cc1>img {
+    width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+  }
+
+  .cc2>img {
+    min-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+  }
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+  <h4>原图为1500*600, 这里是450*180宽高比符合比例</h4>
+  <div class="cc">
+    <img src="/config/images/photographer.jpg">
+  </div>
+  <h4>300*180, 图片横边会被裁剪</h4>
+  <div class="cc1">
+    <img src="/config/images/photographer.jpg">
+  </div>
+  <h4>300*180, height改为max-height</h4>
+  <div class="cc2">
+    <img src="/config/images/photographer.jpg">
+  </div>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>min-width的意义</h5>
+      <p>为什么设置min-width之后超过了父元素宽度?
+      </p>
+      <p>
+        width改为min-width之后, 当图片缩小到高度刚好满足, 宽度还有溢出的时候, 就同时满足了min-width:100%, max-height:100%; 此时高度为100%, 宽度大于100%
+      </p>
+      <p>之前满足的原因是, 缩放到上面一步满足min-width:100%但是不满足width:100%要继续缩放</p>
+
+    </blockquote>
+  </div>
+</div>
+<script>
+
+
+</script>
