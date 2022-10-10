@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .wrap {
+      display: flex;
+      justify-content: flex-start;
+    }
+
+    .foo {
+      width: 200px;
+      height: 200px;
+      margin-left: 20px;
+    }
+
+    .f1 {
+      background: pink;
+    }
+
+    .f2 {
+      background: skyblue;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="foo f1"></div>
+    <div class="foo f2"></div>
+  </div>
+  <script>
+    let arrMultiply = []
+    let arrOverlay = []
+    function overlay(a, b) {
+      if (a <= 128) {
+        return Math.round(a * b / 128)
+      } else {
+        return 255 - Math.round((255 - a) * (255 - b) / 128)
+      }
+    }
+
+    function multiply(a, b) {
+      return Math.round(a * b / 255)
+    }
+
+    for (let i = 1; i < 12; i++) {
+      arrMultiply[i - 1] = []
+      arrOverlay[i - 1] = []
+      for (let j = 1; j < 12; j++) {
+        let a = (i - 1) * 25, b = (j - 1) * 25;
+        arrMultiply[i - 1][j - 1] = multiply(a, b);
+        arrOverlay[i - 1][j - 1] = overlay(a, b);
+      }
+    }
+    // console.log(arrMultiply)
+    console.log(arrOverlay)
+  </script>
+</body>
+
+</html>

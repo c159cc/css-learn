@@ -1,0 +1,65 @@
+<title>少一些冲动和浮躁, 多一些冷静和客观</title>
+<style>
+  .wrap {
+    display: inline-block;
+    padding: 10px;
+    background: #ccc;
+  }
+
+  .foo {
+    width: 380px;
+    background: pink;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    outline: 1px solid black;
+  }
+
+  .boo {
+    width: 200px;
+    outline: 2px solid red;
+    /* 他将整个foo下拉了 */
+    margin: 1200px 0;
+    clear: both;
+  }
+
+  .boo-sibling {
+    width: 100px;
+    outline: 1px solid blue;
+    margin-top: 300px;
+  }
+
+  .float {
+    float: left;
+    width: 100px;
+    height: 100px;
+    background: green;
+  }
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+  <h4>合并</h4>
+  <div class="wrap">
+    <div class="foo">
+      <div class="float">float</div>
+      <!-- <div class="boo-sibling"></div> -->
+      <div class="boo">
+      </div>
+      <div class="boo-sibling"></div>
+    </div>
+  </div>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>标题</h5>
+      <p>首先boo在foo中, boo的上下边距合并了, 作为foo的上边距
+      </p>
+      <p>是不是说如果foo有个下边距200px, </p>
+      <p>boo自己上下100px合并之后, 和boo-sibling合并, 合并之后的margin不能和boo的父元素的margin-bottom合并 ?
+
+      </p>
+    </blockquote>
+  </div>
+</div>
+<script>
+
+
+</script>

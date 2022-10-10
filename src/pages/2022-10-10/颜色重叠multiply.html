@@ -1,0 +1,49 @@
+<title>少一些冲动和浮躁, 多一些冷静和客观</title>
+<style>
+  .foo {
+    width: 380px;
+    height: 300px;
+    background: url(/config/images/1.jpg) no-repeat;
+    border: 1px solid red;
+  }
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+
+  <div class="foo"></div>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>标题</h5>
+      <p>qa?
+      </p>
+      <p>解答</p>
+    </blockquote>
+  </div>
+</div>
+<script>
+  let arrMultiply = []
+  let arrOverlay = []
+  function overlay(a, b) {
+    if (a <= 128) {
+      return Math.round(a * b / 128)
+    } else {
+      return 255 - Math.round((255 - a) * (255 - b) / 128)
+    }
+  }
+
+  function multiply(a, b) {
+    return Math.round(a * b / 255)
+  }
+
+  for (let i = 1; i < 12; i++) {
+    arrMultiply[i - 1] = []
+    arrOverlay[i - 1] = []
+    for (let j = 1; j < 12; j++) {
+      let a = (i - 1) * 25, b = (j - 1) * 25;
+      arrMultiply[i - 1][j - 1] = multiply(a, b);
+      arrOverlay[i - 1][j - 1] = overlay(a, b);
+    }
+  }
+  // console.log(arrMultiply)
+  console.log(arrOverlay)
+</script>

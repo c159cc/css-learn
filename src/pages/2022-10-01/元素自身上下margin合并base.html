@@ -1,0 +1,46 @@
+<title>少一些冲动和浮躁, 多一些冷静和客观</title>
+<style>
+  .cc {
+    width: 380px;
+    background: #ccc;
+    border:1px solid red;
+  }
+  .foo1{
+    outline: 2px solid red;
+    margin-top: 100px;
+    margin-bottom: 200px;
+    /* border-bottom:1px solid green; */
+  }
+  .boo{
+    outline: 1px solid blue;
+  }
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+
+  <div class="cc">
+    <div class="foo1"></div>
+    <div class="boo"></div>
+  </div>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>foo应该发生上下margin合并, 为什么没有?</h5>
+      <p>如果合并了foo的margin-top变成200px, 这里仍然是100px
+      </p>
+      <h5>父元素产生了格式化上下文, 父元素内部唯一的child, 上下margin不能合并吗?</h5>
+      <p>已经合并了,但是跟我所想的不一样</p>
+      <p>如果没有合并,margin-bottom应该为200px,这里只有100px的效果</p>
+      <p>我想的是怎么样呢? </p>
+      <p>我想的是margin-top和margin-bottom合并之后统统变为margin-top</p>
+      <p>关键问题在于margin-top和margin-bottom合并之后outline怎么绘制?</p>
+      <p>常规绘制, 顶部应该绘制margin-bottom, 100px的位置应该绘制margin-top, 这样显然不合适</p>
+      <p>保持margin-bottom在margin-top之下或者至少在一起, 所以就有了这样的图形
+
+      </p>
+    </blockquote>
+  </div>
+</div>
+<script>
+
+
+</script>

@@ -1,0 +1,88 @@
+<title>少一些冲动和浮躁, 多一些冷静和客观</title>
+<style>
+  #grid>div {
+    border: 1px solid red;
+  }
+
+  @media all and (max-width:1500px) {
+    #grid>div {
+      border: 1px solid blue;
+    }
+
+    #grid {
+      grid-template-rows: auto 1fr auto;
+      grid-template-columns: auto 1fr;
+      grid-template-areas:
+        "title board"
+        "stats board"
+        "score controls"
+    }
+  }
+
+  @media all and (min-width:1500px) {
+    #grid>div {
+      border: 1px solid red;
+    }
+
+    #grid {
+      grid-template-rows: auto auto 1fr auto;
+      grid-template-columns: auto 1fr;
+      grid-template-areas:
+        "title stats"
+        "score stats"
+        "board board"
+        "controls controls"
+    }
+  }
+
+  #grid {
+    display: grid;
+    width: 380px;
+    height: 300px;
+
+  }
+
+  #title {
+    grid-area: title;
+  }
+
+  #score {
+    grid-area: score;
+  }
+
+  #stats {
+    grid-area: stats;
+  }
+
+  #board {
+    grid-area: board;
+  }
+
+  #controls {
+    grid-area: controls;
+  }
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+  <div id="grid">
+    <div id="title">Game Title</div>
+    <div id="score">Score</div>
+    <div id="stats">Stats</div>
+    <div id="board">Board</div>
+    <div id="controls">Controls</div>
+  </div>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>根据窗口大小调整布局</h5>
+      <p>
+        @media
+      </p>
+      <h5>使用areas的名字好处?</h5>
+      <p>加一行, 一列布局方便调整</p>
+    </blockquote>
+  </div>
+</div>
+<script>
+
+
+</script>

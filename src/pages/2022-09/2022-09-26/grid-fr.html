@@ -1,0 +1,108 @@
+<title>少一些冲动和浮躁, 多一些冷静和客观</title>
+<style>
+  .grid1 {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .grid2 {
+    grid-template-columns: 200px 1fr 1fr;
+  }
+
+  .grid3 {
+    grid-template-columns: auto 1fr 1fr;
+  }
+
+  .grid4 {
+    grid-template-columns: auto 50px 100px;
+  }
+
+  .grid5{
+    grid-template-columns:auto .1fr .1fr;
+  }
+  .container {
+    display: grid;
+    width: 380px;
+  }
+
+  .foo {
+    border: 1px solid red;
+  }
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+
+  <h4>1fr 1fr 1fr</h4>
+  <div class="container grid1">
+    <div class="foo">1</div>
+    <div class="foo">2</div>
+    <div class="foo">3</div>
+    <div class="foo">4</div>
+    <div class="foo">5</div>
+    <div class="foo">6</div>
+    <div class="foo">7</div>
+    <div class="foo">8</div>
+    <div class="foo">9</div>
+  </div>
+  <h4>200px 1fr 1fr</h4>
+  <div class="container grid2">
+    <div class="foo">1</div>
+    <div class="foo">2</div>
+    <div class="foo">3</div>
+    <div class="foo">4</div>
+    <div class="foo">5</div>
+    <div class="foo">6</div>
+    <div class="foo">7</div>
+    <div class="foo">8</div>
+    <div class="foo">9</div>
+  </div>
+  <h4>auto 1fr 1fr</h4>
+  <div class="container grid3">
+    <div class="foo">1</div>
+    <div class="foo">2</div>
+    <div class="foo">3</div>
+    <div class="foo">4</div>
+    <div class="foo">5</div>
+    <div class="foo">6</div>
+    <div class="foo">7</div>
+    <div class="foo">8</div>
+    <div class="foo">9</div>
+  </div>
+  <h4>auto 50px 100px</h4>
+  <div class="container grid4">
+    <div class="foo">1</div>
+    <div class="foo">2</div>
+    <div class="foo">3</div>
+    <div class="foo">4</div>
+    <div class="foo">5</div>
+    <div class="foo">6</div>
+    <div class="foo">7</div>
+    <div class="foo">8</div>
+    <div class="foo">9</div>
+  </div>
+    <h4>auto .1fr .1fr</h4>
+    <div class="container grid5">
+      <div class="foo">1</div>
+      <div class="foo">2</div>
+      <div class="foo">3</div>
+      <div class="foo">4</div>
+      <div class="foo">5</div>
+      <div class="foo">6</div>
+      <div class="foo">7</div>
+      <div class="foo">8</div>
+      <div class="foo">9</div>
+    </div>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>fr和auto的优先级</h5>
+      <p>没有设置fr的时候auto表现为拉伸, 设置了fr之后auto表现为包裹
+      </p>
+      <h5>fr小数</h5>
+      <p>fr为小数的时候表示占据剩余空间的多少</p>
+      <p>(容器宽度 - “宽auto”字符宽度) * 0.1</p>
+    </blockquote>
+  </div>
+</div>
+<script>
+
+
+</script>

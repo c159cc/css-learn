@@ -1,0 +1,98 @@
+<title>少一些冲动和浮躁, 多一些冷静和客观</title>
+<style>
+  .foo {
+    width: 380px;
+    height: 200px;
+    background: pink;
+    margin: 0 auto;
+  }
+
+  .boo {
+    margin-top: 100px;
+    width: 200px;
+    height: 100px;
+    outline: 1px solid red;
+  }
+
+  .boo_son {
+    margin-top: 50px;
+    width: 100px;
+    height: 50px;
+    background: skyblue;
+  }
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+  <h4>合并</h4>
+  <div class="foo">
+    <div class="boo">
+      <div class="boo_son"></div>
+    </div>
+  </div>
+  <h4>float: 不合并</h4>
+  <div class="foo">
+    <div class="boo" style="float:left;">
+      <div class="boo_son"></div>
+    </div>
+  </div>
+  <h4>absolute: 不合并</h4>
+  <div class="foo">
+    <div class="boo" style="position: absolute;">
+      <div class="boo_son"></div>
+    </div>
+  </div>
+  <h4>relative: 合并</h4>
+  <div class="foo">
+    <div class="boo" style="position: relative;">
+      <div class="boo_son"></div>
+    </div>
+  </div>
+  <h4>sticky: 合并</h4>
+  <div class="foo">
+    <div class="boo" style="position: sticky;">
+      <div class="boo_son"></div>
+    </div>
+  </div>
+  <h4>inline-block: 不合并</h4>
+  <div class="foo">
+    <div class="boo" style="display: inline-block;">
+      <div class="boo_son"></div>
+    </div>
+  </div>
+  <h4>inline-table: 不合并</h4>
+  <div class="foo">
+    <div class="boo" style="display: inline-table;">
+      <div class="boo_son"></div>
+    </div>
+  </div>
+  <h4>table-caption: 不合并</h4>
+  <div class="foo">
+    <div class="boo" style="display: table-caption;">
+      <div class="boo_son"></div>
+    </div>
+  </div>
+  <h4>table-cell: 合并</h4>
+  <div class="foo">
+    <div class="boo" style="display: table-cell;">
+      <div class="boo_son"></div>
+    </div>
+  </div>
+  <h4>overflow: hidden : 不合并</h4>
+  <div class="foo">
+    <div class="boo" style="overflow: hidden;">
+      <div class="boo_son"></div>
+    </div>
+  </div>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>标题</h5>
+      <p>qa?
+      </p>
+      <p>解答</p>
+    </blockquote>
+  </div>
+</div>
+<script>
+
+
+</script>

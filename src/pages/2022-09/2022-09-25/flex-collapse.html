@@ -1,0 +1,77 @@
+<title>少一些冲动和浮躁, 多一些冷静和客观</title>
+<style>
+  .div1 {
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  .main1 {
+    flex: 1 100%;
+    order: 1;
+  }
+
+  .nav{
+    order:2;
+    background: blue;
+
+  }
+  .cc{
+    order: 3;
+
+    flex: 1 50%;
+  }
+  /* menu items use flex layout so that visibility:collapse will work */
+  .nav>ul>li {
+    display: flex;
+    flex-flow: column;
+  }
+
+  /* dynamically collapse submenus when not targetted */
+  .nav>ul>li:not(:target):not(:hover)>ul {
+    visibility: collapse;
+  }
+  .nav-projects{
+    display: flex;
+    padding:0 20px;
+  }
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+  <div class="div1">
+    <article class="main1">
+      Interesting Stuff to Read
+    </article>
+    <nav class="nav">
+      <ul>
+        <li id="nav-about"><a href="#nav-about">About</a>
+        </li>
+        <li class="nav-projects"><a href="#nav-projects">Projects</a>
+          <ul>
+            <li><a href="…">Art</a>
+            <li><a href="…">Architecture</a>
+            <li><a href="…">Music</a>
+          </ul>
+        </li>
+        <li id="nav-interact"><a href="#nav-interact">Interact</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="cc">over over the menu to the left: each section expands to show its sub-items. In order to keep the
+      sidebar width (and this
+      main area width) stable, visibility: collapse is used instead of display: none. This results in a sidebar that is
+      always
+      wide enough for the word “Architecture”, even though it is not always visible.</div>
+  </div>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>标题</h5>
+      <p>qa?
+      </p>
+      <p>解答</p>
+    </blockquote>
+  </div>
+</div>
+<script>
+
+
+</script>

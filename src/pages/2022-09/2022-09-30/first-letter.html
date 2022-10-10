@@ -1,0 +1,50 @@
+<title>少一些冲动和浮躁, 多一些冷静和客观</title>
+<style>
+  .cc {
+    width: 380px;
+    margin: 0 auto;
+    background: pink;
+    margin-top: 10px;
+  }
+
+  .cc::first-letter {
+    color: yellow;
+  }
+
+  .foo::first-line,
+  .cc1::first-line {
+    font-weight: bold;
+    background: red;
+  }
+
+  .boo {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border: 1px solid red;
+  }
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+
+  <div class="cc">
+    <span class="foo">少一些冲动和浮躁, 多一些冷静和客观少一些冲动和浮躁, 多一些冷静和客观少一些冲动和浮躁, 多一些冷静和客观</span>
+  </div>
+  <div class="cc cc1" style="display: inline-block;">
+    <span class="foo">少一些冲动和浮躁, 多一些冷静和客观少一些冲动和浮躁, 多一些冷静和客观少一些冲动和浮躁, 多一些冷静和客观</span>
+  </div>
+  <div class="cc cc1">
+    <div class="boo"></div><span class="foo">少一些冲动和浮躁, 多一些冷静和客观少一些冲动和浮躁, 多一些冷静和客观少一些冲动和浮躁, 多一些冷静和客观</span>
+  </div>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>第三个div没有first-letter效果</h5>
+      <p>因为第三个div的第一个元素是inline-block</p>
+
+    </blockquote>
+  </div>
+</div>
+<script>
+
+
+</script>

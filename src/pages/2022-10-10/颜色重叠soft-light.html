@@ -1,0 +1,43 @@
+<title>少一些冲动和浮躁, 多一些冷静和客观</title>
+<style>
+  .foo {
+    width: 380px;
+    height: 300px;
+    background: url(/config/images/1.jpg) no-repeat;
+    border: 1px solid red;
+  }
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+
+  <div class="foo"></div>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>标题</h5>
+      <p>qa?
+      </p>
+      <p>解答</p>
+    </blockquote>
+  </div>
+</div>
+<script>
+  let arr = []
+
+
+  function soft(a, b) {
+    if (b <= 128) {
+      return Math.round(a * b / 128 + Math.pow((a / 255), 2) * (255 - 2 * b))
+    } else {
+      return Math.round(a * b / 128 + Math.pow((a / 255), 0.5) * (2 * b - 255))
+    }
+  }
+
+  for (let i = 1; i < 12; i++) {
+    arr[i - 1] = []
+    for (let j = 1; j < 12; j++) {
+      let a = (i - 1) * 25, b = (j - 1) * 25;
+      arr[i - 1][j - 1] = soft(a, b);
+    }
+  }
+  console.log(arr)
+</script>

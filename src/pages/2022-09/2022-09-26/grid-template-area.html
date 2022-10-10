@@ -1,0 +1,57 @@
+<title>少一些冲动和浮躁, 多一些冷静和客观</title>
+<style>
+  .container {
+    display: grid;
+    width: 380px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas:
+      "葡萄 葡萄 葡萄"
+      "龙虾 鱼 鱼"
+      "龙虾 鱼 鱼"
+      "西瓜 西瓜 西瓜"
+    ;
+  }
+
+  .putao {
+    grid-area: 葡萄;
+  }
+
+  .longxia {
+    grid-area: 龙虾;
+  }
+
+  .yu {
+    grid-area: 鱼;
+  }
+
+  .xigua {
+    grid-area: 西瓜
+  }
+
+  .container>div {
+    border: 1px solid red;
+  }
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+
+  <div class="container">
+    <div class="putao">putao</div>
+    <div class="longxia">longxia</div>
+    <div class="yu">yu</div>
+    <div class="xigua">xigua</div>
+  </div>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>标题</h5>
+      <p>qa?
+      </p>
+      <p>解答</p>
+    </blockquote>
+  </div>
+</div>
+<script>
+
+
+</script>

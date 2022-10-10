@@ -1,0 +1,54 @@
+<title>少一些冲动和浮躁, 多一些冷静和客观</title>
+<style>
+  .cc {
+    width: 380px;
+    margin: 0 auto;
+    background: pink;
+    margin-top: 10px;
+  }
+
+  .foo::first-line,
+  .cc1::first-line {
+    font-weight: bold;
+    background: red;
+  }
+
+  .boo {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border: 1px solid red;
+  }
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+
+  <div class="cc">
+    <span class="foo">少一些冲动和浮躁, 多一些冷静和客观少一些冲动和浮躁, 多一些冷静和客观少一些冲动和浮躁, 多一些冷静和客观</span>
+  </div>
+  <div class="cc cc1" style="display: inline-block;">
+    <span class="foo">少一些冲动和浮躁, 多一些冷静和客观少一些冲动和浮躁, 多一些冷静和客观少一些冲动和浮躁, 多一些冷静和客观</span>
+  </div>
+  <div class="cc cc1">
+    <div class="boo"></div><span class="foo">少一些冲动和浮躁, 多一些冷静和客观少一些冲动和浮躁, 多一些冷静和客观少一些冲动和浮躁, 多一些冷静和客观</span>
+  </div>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>span里面存在first-line吗?</h5>
+      <p>不存在, first-line加在cc上可以
+      </p>
+      <h5>inline-block 里面存在first-line吗?</h5>
+      <p>存在, 因为inline-block也是block container
+      </p>
+      <h5>如果div的第一个元素是inline-block呢?</h5>
+      <p>仍然存在
+      </p>
+      <h5>第三个图, 行框有多高呢?背景色为什么是这样分布的?</h5>
+      <p>理解为行框比内容框大很多, 背景色添加到了内容框上</p>
+    </blockquote>
+  </div>
+</div>
+<script>
+
+
+</script>
