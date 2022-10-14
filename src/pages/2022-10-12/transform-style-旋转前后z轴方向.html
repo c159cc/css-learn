@@ -1,0 +1,59 @@
+<title>少一些冲动和浮躁, 多一些冷静和客观</title>
+<style>
+  .example-element {
+    width: 100px;
+    height: 100px;
+    margin: 50px;
+    /* background: pink; */
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotate3d(1, 1, 1, 30deg);
+  }
+
+  .face {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    font-size: 60px;
+    color: #fff;
+  }
+
+
+  .bottom {
+    background: rgba(210, 0, 0, .7);
+    transform: rotateY(180deg) translateZ(150px);
+  }
+
+  .top {
+    background: rgba(0, 0, 210, .7);
+    transform: translateZ(150px);
+  }
+
+
+  .middle {
+    background: rgba(210, 0, 210, .7);
+  }
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+  <section class="example-element">
+    <div class="face bottom">3</div>
+    <div class="face middle">6</div>
+    <div class="face top">4</div>
+  </section>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>标题</h5>
+      <p>qa?
+      </p>
+      <p>解答</p>
+    </blockquote>
+  </div>
+</div>
+<script>
+
+
+</script>

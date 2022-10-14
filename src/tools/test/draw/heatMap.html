@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    html,
+    body,
+    .foo {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    .foo {
+      position: relative;
+      background: linear-gradient(to bottom, transparent 49%, black 50%, transparent 52%),
+        linear-gradient(to left, transparent 49%, black 50%, transparent 52%);
+      background-size: 40px 40px;
+    }
+
+    .boox {
+      box-sizing: border-box;
+      position: absolute;
+      width: 100%;
+      border-top: 2px solid red;
+      top: 50px;
+      z-index: 1;
+    }
+
+    .booy {
+      box-sizing: border-box;
+      position: absolute;
+      height: 100%;
+      border-left: 2px solid red;
+      left: 20px;
+      z-index: 1;
+    }
+
+    #main {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="foo " id="foo">
+    <div class="boox" id="boox"></div>
+    <div class="booy" id="booy"></div>
+    <div id="main"></div>
+  </div>
+  <script>
+    const boox = document.getElementById("boox")
+    const booy = document.getElementById("booy")
+    foo.addEventListener('mousemove', (ev) => {
+      // booy.style.left = `translateY(-${ev.offsetY }px)`;
+      // console.log("坐标为(", ev.offsetX, ev.offsetY, ")")
+      if (ev.offsetY > 0 && ev.offsetX > 0) {
+        boox.style.top = `${ev.offsetY}px`;
+        booy.style.left = `${ev.offsetX}px`;
+      }
+
+      // boox.style.top = `${ev.clientY}px`;
+      // booy.style.left = `${ev.clientX}px`;
+    }, false);
+
+
+  </script>
+  <script src="./echart.min.js"></script>
+  <script src="./drawHeat.js"></script>
+</body>
+
+</html>

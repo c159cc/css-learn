@@ -1,0 +1,46 @@
+<title>少一些冲动和浮躁, 多一些冷静和客观</title>
+<style>
+  .foo {
+    width: 380px;
+    height: 75px;
+    border: 1px solid red;
+    text-overflow: ellipsis ellipsis;
+    text-align: center;
+    white-space: nowrap;
+    overflow: scroll;
+  }
+
+  .boo p {
+    width: 200px;
+    border: 1px solid;
+    padding: 2px 5px;
+
+    /* Both of the following are required for text-overflow */
+    white-space: nowrap;
+    overflow: scroll;
+  }
+
+  .overflow-ellipsis-ellipsis {
+    text-overflow: ellipsis ellipsis;
+  }
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+  <div class="foo">extralongwordextralongwordextralongwordextralongwordextralongwordextralongword</div>
+  <div class="boo">
+    <pre>ellipsis ellipsis</pre>
+    <p class="overflow-ellipsis-ellipsis">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+  </div>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>标题</h5>
+      <p>qa?
+      </p>
+      <p>解答</p>
+    </blockquote>
+  </div>
+</div>
+<script>
+
+
+</script>

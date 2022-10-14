@@ -1,0 +1,50 @@
+<title>少一些冲动和浮躁, 多一些冷静和客观</title>
+<style>
+  .foo {
+    width: 180px;
+    height: 100px;
+    border: 1px solid red;
+    margin-bottom: 30px;
+
+  }
+
+  .foo:hover {
+    width: 380px;
+  }
+
+  .foo1 {
+    transition: width 3s steps(2, start);
+  }
+
+  .foo2 {
+    transition: width 3s steps(2, end);
+  }
+
+  .foo3 {
+    transition: width 3s steps(2, jump-both);
+  }
+
+  .foo4 {
+    transition: width 3s steps(2, jump-none);
+  }
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+
+  <div class="foo foo1"></div>
+  <div class="foo foo2"></div>
+  <div class="foo foo3"></div>
+  <div class="foo foo4"></div>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>标题</h5>
+      <p>qa?
+      </p>
+      <p>解答</p>
+    </blockquote>
+  </div>
+</div>
+<script>
+
+
+</script>
