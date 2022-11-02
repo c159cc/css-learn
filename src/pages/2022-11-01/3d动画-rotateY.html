@@ -1,0 +1,42 @@
+<title>少一些冲动和浮躁, 多一些冷静和客观</title>
+<style>
+.image-card{
+  display: inline-block;
+  width: 240px;
+  height: 320px;
+  background: url("https://picsum.photos/id/1049/240/320");
+  transition:transform .5s ease;
+}
+
+.perspective-left{
+  transform: perspective(1500px) rotateY(30deg);
+}
+.perspective-right{
+  transform: perspective(1500px) rotateY(-30deg);
+}
+.perspective-left:hover{
+  transform: perspective(1500px) rotateY(5deg);
+}
+.perspective-right:hover{
+  transform: perspective(1500px) rotateY(-5deg);
+}
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+<div class="card-container">
+  <div class="image-card perspective-left"></div>
+  <div class="image-card perspective-right"></div>
+</div>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>标题</h5>
+      <p>qa?
+      </p>
+      <p>解答</p>
+    </blockquote>
+  </div>
+</div>
+<script>
+
+
+</script>

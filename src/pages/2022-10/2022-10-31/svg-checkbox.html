@@ -1,0 +1,76 @@
+<title>少一些冲动和浮躁, 多一些冷静和客观</title>
+<style>
+.checkbox-symbol {
+  position: absolute;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  user-select: none;
+}
+.checkbox span:first-child {
+  position: relative;
+  flex: 0 0 18px;
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  transform: scale(1);
+  border: 1px solid #cccfdb;
+  transition: all 0.3s ease;
+}
+.checkbox:hover span:first-child {
+  border-color: #0077ff;
+}
+
+.checkbox span:first-child {
+  border-color: #0077ff;
+  animation: zoom-in-out 0.3s ease;
+}
+
+ .checkbox span:first-child svg {
+  stroke-dashoffset: 0;
+}
+
+
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+
+  <svg class="checkbox-symbol">
+    <symbol id="check" viewport="0 0 12 10">
+      <polyline points="1.5,6 4.5,9 10.5,1" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></polyline>
+    </symbol>
+  </svg>
+
+  <div class="checkbox-container">
+    <input class="checkbox-input" id="apples" type="checkbox" />
+    <label class="checkbox" for="apples">
+      <span>
+        <svg width="12px" height="10px">
+          <use xlink:href="#check"></use>
+        </svg>
+      </span>
+      <span>Apples</span>
+    </label>
+    <input class="checkbox-input" id="oranges" type="checkbox" />
+    <label class="checkbox" for="oranges">
+      <span>
+        <svg width="12px" height="10px">
+          <use xlink:href="#check"></use>
+        </svg>
+      </span>
+      <span>Oranges</span>
+    </label>
+  </div>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>标题</h5>
+      <p>qa?
+      </p>
+      <p>解答</p>
+    </blockquote>
+  </div>
+</div>
+<script>
+
+
+</script>

@@ -1,0 +1,62 @@
+<title>少一些冲动和浮躁, 多一些冷静和客观</title>
+<style>
+  .foo {
+    width: 200px;
+    height: 20px;
+    border: 1px solid red;
+    animation: mode 2s ease-in-out 2s 1;
+    margin-bottom: 20px;
+  }
+
+  .foo1 {
+    animation-fill-mode: none;
+  }
+
+  .foo2 {
+    animation-fill-mode: backwards;
+  }
+
+  .fstart {
+    width: 300px;
+    height: 40px;
+      background: blue;
+  }
+
+  .fend {
+    width: 400px;
+    height: 60px;
+    border: 1px solid red;
+  }
+
+  @keyframes mode {
+    0% {
+      width: 300px;
+      height: 40px;
+      background: blue;
+    }
+
+    100% {
+      width: 400px;
+      height: 60px;
+    }
+  }
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+  <div class=" fstart">fstart</div>
+  <div class=" fend">fend</div>
+  <div class="foo foo1">none</div>
+  <div class="foo foo2">backwards</div>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>标题</h5>
+      <p>qa?
+      </p>
+      <p>解答</p>
+    </blockquote>
+  </div>
+</div>
+<script>
+
+
+</script>

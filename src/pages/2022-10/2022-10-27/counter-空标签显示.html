@@ -1,0 +1,37 @@
+<title>少一些冲动和浮躁, 多一些冷静和客观</title>
+<style>
+  .foo {
+    counter-reset: link;
+  }
+
+  .foo a {
+    counter-increment: link;
+  }
+
+  .foo a:empty::after {
+    content: "[" counter(link) "]";
+  }
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+
+  <div class="foo">
+    <p>See <a href="https://www.mozilla.org/"></a></p>
+    <p>Do not forget to <a href="contact-me.html">leave a message</a>!</p>
+    <p>See also <a href="https://developer.mozilla.org/"></a></p>
+  </div>
+
+
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>标题</h5>
+      <p>qa?
+      </p>
+      <p>解答</p>
+    </blockquote>
+  </div>
+</div>
+<script>
+
+
+</script>

@@ -1,0 +1,62 @@
+<title>少一些冲动和浮躁, 多一些冷静和客观</title>
+<style>
+  .card {
+    width: 380px;
+    height: 300px;
+    position: relative;
+    perspective: 1500px;
+
+  }
+
+  .card-side {
+    height: 280px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: all .5s ease;
+    backface-visibility: hidden;
+  }
+
+  .front {
+    background: skyblue;
+  }
+
+  .back {
+    background: pink;
+    transform: rotateY(-180deg);
+  }
+
+  .card:hover .front {
+    transform: rotateY(180deg);
+  }
+
+  .card:hover .back {
+    transform: rotateY(0);
+  }
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+
+  <div class="card">
+    <div class="card-side front">
+      <div>Front Side</div>
+    </div>
+    <div class="card-side back">
+      <div>Back Side</div>
+    </div>
+  </div>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>标题</h5>
+      <p>qa?
+      </p>
+      <p>解答</p>
+    </blockquote>
+  </div>
+</div>
+<script>
+
+
+</script>

@@ -1,0 +1,38 @@
+<title>少一些冲动和浮躁, 多一些冷静和客观</title>
+<style>
+  .foo {
+    width: 380px;
+    height: 300px;
+    overflow-y: scroll;
+    position: relative;
+  }
+  .sign {
+    position: sticky;
+    height: 10px;
+    width: 0;
+    top: 0;
+    background: blue;
+  }
+  .boo {
+    height: 900px;
+    background: pink;
+  }
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+  <div id="foo"  class="foo">
+    <div id="sign" class="sign"></div>
+    <div id="boo" class="boo"></div>
+  </div>
+</div>
+<script>
+  let foo = document.getElementById("foo")
+  let overflowHeight = foo.scrollHeight - foo.clientHeight;
+  foo.addEventListener("scroll", ()=>{
+    const scrollTop = foo.scrollTop;
+    console.log("scroll", scrollTop)
+    sign.style.width = `${(scrollTop / overflowHeight)*100}%`
+    console.log("width = ", sign.style.width)
+  })
+
+</script>

@@ -1,0 +1,74 @@
+<title>少一些冲动和浮躁, 多一些冷静和客观</title>
+<style>
+  .cc ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .cc li {
+    height: 10vh;
+    flex-grow: 1;
+  }
+
+  .cc img {
+    min-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+  }
+
+  li:last-child {
+    flex-grow: 10;
+  }
+
+  .cc {
+    padding: 10px;
+  }
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+  <div class="cc">
+    <ul>
+      <li>
+        <img src="/config/images/1.jpg">
+      </li>
+      <li><img src="/config/images/arrow.svg">
+      </li>
+      <li><img src="/config/images/cover-5-1.jpg">
+      </li>
+      <li><img src="/config/images/delete.png">
+      </li>
+      <li><img src="/config/images/img_tree.gif">
+      </li>
+      <li><img src="/config/images/photographer.jpg">
+      </li>
+      <li></li>
+    </ul>
+  </div>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>标题</h5>
+      <p>10vh的高宽度随意, 图片的宽度会保持合适的大小
+      </p>
+      <h5>如果我要实现一个照片墙</h5>
+      <p>高度固定, 宽度自适应</p>
+      <p>每张图片的高度是固定的, 宽度根据图片自己的宽度来计算, 计算规则是, 宽度百分百呈现, 高度可以被裁剪</p>
+      <ol>
+        <li>要想宽度能完全展示, 宽度不能被裁剪, cover的图片裁剪哪一边?
+          <p>
+            先溢出容器的一边被裁剪,如果是宽边溢出容器呢? 当宽边被裁剪的时候让容器变大避免宽边被裁剪
+          </p>
+          <p>
+            高边max-height, 图片的高可以不用放那么大
+          </p>
+        </li>
+      </ol>
+      <h5>min-width的意义</h5>
+      <p>为什么这里的min-width不会超过容器, 容器具有包裹性, flex容器会将它缩小</p>
+      <p>第一个缩小的原因是因为max-height, 第二个缩小的原因是因为flex</p>
+    </blockquote>
+  </div>
+</div>
+<script>
+
+
+</script>

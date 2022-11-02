@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .wrap {
+      width: 210mm;
+      height: 290mm;
+      margin: 0 auto;
+      background: pink;
+      display: grid;
+      grid:
+        "a b" 1fr "c c" 1fr/1fr 1fr;
+    }
+
+    .a {
+      grid-area: a;
+    }
+
+    .b {
+      grid-area: b;
+    }
+
+    .c {
+      grid-area: c;
+      outline: 1px solid red;
+    }
+
+    .wrap img {
+      max-width: 100%;
+      object-fit: cover;
+    }
+
+
+    .c img {
+      max-height: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="a"><img src="./1.jpg" alt=""></div>
+    <div class="b"><img src="./3.jpg" alt=""></div>
+    <div class="c"><img src="./2.jpg" alt=""> </div>
+  </div>
+</body>
+
+</html>

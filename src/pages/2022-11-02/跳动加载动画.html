@@ -1,0 +1,50 @@
+<title>少一些冲动和浮躁, 多一些冷静和客观</title>
+<style>
+  .bouncing-loader {
+    display: flex;
+    justify-content: center;
+    background: #000;
+  }
+
+  .bouncing-loader>div{
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    margin:3rem .2rem;
+    animation: bouncing 1s  alternate infinite;
+  }
+
+  @keyframes bouncing {
+    to{
+      opacity: .1;
+    transform: translate3d(0, -16px, 0);
+    }
+  }
+  .bouncing-loader>div:nth-child(2){
+    animation-delay: .2s;
+  }
+    .bouncing-loader>div:nth-child(3){
+    animation-delay: .4s;
+  }
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+  <div class="bouncing-loader">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>标题</h5>
+      <p>qa?
+      </p>
+      <p>解答</p>
+    </blockquote>
+  </div>
+</div>
+<script>
+
+
+</script>

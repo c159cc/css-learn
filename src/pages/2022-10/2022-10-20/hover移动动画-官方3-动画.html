@@ -1,0 +1,78 @@
+<title>少一些冲动和浮躁, 多一些冷静和客观</title>
+<style>
+  .foo {
+    min-width: 340px;
+    max-width: 480px;
+    max-height: 290px;
+    width: 100%;
+    outline: 1px solid red;
+    position: relative;
+    /* overflow: hidden; */
+    /* background: #000; */
+  }
+
+  .foo:hover>ul {
+    left: 0;
+    opacity: 1;
+  }
+
+  .foo:hover>img {
+    opacity: 0.5;
+    left: 120px;
+  }
+
+  .foo>ul {
+    position: absolute;
+    width: 120px;
+    left: -120px;
+    height: 100%;
+
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8px 4px;
+    transition: 0.3s ease-in-out;
+  }
+
+  .foo li {
+    color: #fff;
+    list-style: none;
+    line-height: 2;
+    opacity: .8;
+    padding: 5px 15px;
+    text-align: center;
+  }
+
+  .foo img {
+    position: relative;
+    left: 0;
+    top: 0;
+    max-width: 100%;
+    transition: 0.3s ease-in-out;
+  }
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+
+  <div class="foo">
+    <ul>
+      <li>home</li>
+      <li>pricing</li>
+      <li>about</li>
+    </ul>
+    <img src="/config/images/1.jpg" alt="">
+  </div>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>标题</h5>
+      <p>qa?
+      </p>
+      <p>解答</p>
+    </blockquote>
+  </div>
+</div>
+<script>
+
+
+</script>

@@ -1,0 +1,35 @@
+<title>少一些冲动和浮躁, 多一些冷静和客观</title>
+<style>
+  .el {
+    transition: height 0.3s;
+    overflow: hidden;
+    height: 0;
+  }
+
+  .trigger:hover>.el {
+    height: var(--height);
+  }
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+
+  <div class="trigger">
+    Hover me to see a height transition.
+    <div id="el" class="el">Additional content</div>
+  </div>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>标题</h5>
+      <p>qa?
+      </p>
+      <p>解答</p>
+    </blockquote>
+  </div>
+</div>
+<script>
+  var el = document.getElementById("el");
+  var height = el.scrollHeight;
+  console.log("ccdbug ", height)
+  el.style.setProperty("--height", height + "px");
+
+</script>

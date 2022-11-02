@@ -1,0 +1,42 @@
+<title>少一些冲动和浮躁, 多一些冷静和客观</title>
+<style>
+  .foo {
+    position: relative;
+    width: 400px;
+    border: solid;
+    font-size: 26px;
+    line-height: 1.4;
+    height: calc(26px * 1.4 * 3);
+    overflow: hidden;
+  }
+
+  .foo::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: calc(26px * 1.4);
+    width: 151px;
+    background: linear-gradient(to right, transparent, white 50%);
+  }
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+  <p class="foo">
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+    eirmod tempor invidunt ut labore et.
+  </p>
+
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>标题</h5>
+      <p>qa?
+      </p>
+      <p>解答</p>
+    </blockquote>
+  </div>
+</div>
+<script>
+
+
+</script>

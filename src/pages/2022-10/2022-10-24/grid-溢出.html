@@ -1,0 +1,55 @@
+<title>少一些冲动和浮躁, 多一些冷静和客观</title>
+<style>
+  .wrap {
+    width: 580px;
+    height: 600px;
+    margin: 0 auto;
+    background: pink;
+    display: grid;
+    grid:
+      "a b" .4fr "c c" .4fr/.4fr .4fr;
+  }
+
+  .a {
+    grid-area: a;
+    width: 200px;
+  }
+
+  .b {
+    grid-area: b;
+  }
+
+  .c {
+    grid-area: c;
+  }
+
+  .wrap img {
+    max-width: 100%;
+    object-fit: cover;
+  }
+
+  .wrap .c {
+    outline: 1px solid red;
+    height: 200px;
+    width: 300px;
+    object-position: left top;
+    object-fit: fill;
+  }
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+  <div class="wrap">
+    <img class="a" src="/config/images/cs1.jpg" alt="">
+    <img class="b" src="/config/images/cs3.jpg" alt="">
+    <img class="c" src="/config/images/cs2.jpg" alt="">
+  </div>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>让照片忽略自己的尺寸使用容器大小</h5>
+    </blockquote>
+  </div>
+</div>
+<script>
+
+
+</script>

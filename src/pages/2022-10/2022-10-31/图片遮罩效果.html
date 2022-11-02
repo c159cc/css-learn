@@ -1,0 +1,64 @@
+<title>少一些冲动和浮躁, 多一些冷静和客观</title>
+<style>
+  .hover-img {
+    position: relative;
+    outline: 1px solid red;
+    width: min-content;
+  }
+
+  .hover-img>img {
+    min-width: 320px;
+    max-width: 380px;
+    width: 100%;
+    display: block;
+  }
+  .hover-img>figcaption{
+    transition: all 1s ease-in-out;
+  }
+
+  .hover-img:hover>figcaption
+   {
+    left: 0;
+    top: 0;
+    right:0;
+    display: block;
+    height: 100%;
+    border-top: 30px solid;
+    border-bottom: 30px solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+  }
+
+  figcaption>h4 {
+    vertical-align: center;
+    color:#fff;
+  }
+
+  figcaption {
+    position: absolute;
+    display: none;
+  }
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+  <figure class="hover-img">
+    <img src="https://picsum.photos/id/200/440/320.jpg" />
+    <figcaption>
+      <h4>Lorem <br />Ipsum</h4>
+    </figcaption>
+  </figure>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>标题</h5>
+      <p>qa?
+      </p>
+      <p>解答</p>
+    </blockquote>
+  </div>
+</div>
+<script>
+
+
+</script>

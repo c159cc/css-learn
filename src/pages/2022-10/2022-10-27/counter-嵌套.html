@@ -1,0 +1,61 @@
+<title>少一些冲动和浮躁, 多一些冷静和客观</title>
+<style>
+  .foo ol {
+    counter-reset: section;
+    list-style-type: none;
+  }
+
+  .foo li::before {
+    counter-increment: section;
+    content: counters(section, ".") " "
+  }
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+
+  <div class="foo">
+    <ol>
+      <li>item</li> <!-- 1     -->
+      <li>item
+        <!-- 2     -->
+        <ol>
+          <li>item</li> <!-- 2.1   -->
+          <li>item</li> <!-- 2.2   -->
+          <li>item
+            <!-- 2.3   -->
+            <ol>
+              <li>item</li> <!-- 2.3.1 -->
+              <li>item</li> <!-- 2.3.2 -->
+            </ol>
+            <ol>
+              <li>item</li> <!-- 2.3.1 -->
+              <li>item</li> <!-- 2.3.2 -->
+              <li>item</li> <!-- 2.3.3 -->
+            </ol>
+          </li>
+          <li>item</li> <!-- 2.4   -->
+        </ol>
+      </li>
+      <li>item</li> <!-- 3     -->
+      <li>item</li> <!-- 4     -->
+    </ol>
+    <ol>
+      <li>item</li> <!-- 1     -->
+      <li>item</li> <!-- 2     -->
+    </ol>
+  </div>
+
+
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>标题</h5>
+      <p>qa?
+      </p>
+      <p>解答</p>
+    </blockquote>
+  </div>
+</div>
+<script>
+
+
+</script>

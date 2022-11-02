@@ -1,0 +1,63 @@
+<title>少一些冲动和浮躁, 多一些冷静和客观</title>
+<style>
+  .foo>img {
+    position: relative;
+    display: block;
+    text-align: center;
+  }
+
+  .foo>img::before {
+    content: "图片加载失败";
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .foo>img::after {
+    content: "url(" attr(alt) ")";
+    display: block;
+  }
+
+  .foo2>img{
+    position: relative;
+    display: block;
+    text-align: center;
+  }
+  .foo2>img::before{
+    content: "\f1c5" " " attr(alt);
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: white;
+  }
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+  <h4>默认效果</h4>
+  <div>
+    <img src="/config/images/2.jpg" alt="美奴图片">
+  </div>
+
+  <h4>处理后效果</h4>
+  <div class="foo">
+    <img src="/config/images/2.jpg" alt="美奴图片">
+  </div>
+
+  <h4>处理后效果2</h4>
+  <div class="foo2">
+    <img src="/config/images/2.jpg" alt="美奴图片">
+  </div>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>标题</h5>
+      <p>qa?
+      </p>
+      <p>解答</p>
+    </blockquote>
+  </div>
+</div>
+<script>
+
+
+</script>

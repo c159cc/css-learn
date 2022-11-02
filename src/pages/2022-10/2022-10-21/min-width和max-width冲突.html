@@ -1,18 +1,20 @@
 <title>少一些冲动和浮躁, 多一些冷静和客观</title>
 <style>
-  .box {
-    line-height: 556px;
+  .foo {
     background: pink;
+    min-width: 500px;
+    max-width: 200px;
   }
 </style>
 <div id="effect" class="part">
   <h3>效果：</h3>
-  <div class="box">
-    hello <img src="/config/images/1.jpg" height="128">
-  </div>
+  <div class="foo">min-width: 500px;max-width: 200px;</div>
   <div class="markdown-section">
     <blockquote class="block-tip">
-      <h5>padding断行原理?</h5>
+      <h5>min-width和max-width冲突</h5>
+      <p>min-width优先级更大
+      </p>
+      <p>解答</p>
     </blockquote>
   </div>
 </div>

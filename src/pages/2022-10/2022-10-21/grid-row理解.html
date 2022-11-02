@@ -1,0 +1,43 @@
+<title>少一些冲动和浮躁, 多一些冷静和客观</title>
+<style>
+  #grid {
+    display: grid;
+    height: 200px;
+    grid-template-columns: 200px;
+    grid-template-rows: repeat(6, 1fr);
+  }
+
+  #item1 {
+    background-color: lime;
+  }
+
+  #item2 {
+    background-color: yellow;
+    grid-row: 2 / 4;
+  }
+
+  #item3 {
+    background-color: blue;
+    grid-row: span 2 / 7;
+  }
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+  <div id="grid">
+    <div id="item1"></div>
+    <div id="item2"></div>
+    <div id="item3"></div>
+  </div>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>标题</h5>
+      <p>qa?
+      </p>
+      <p>解答</p>
+    </blockquote>
+  </div>
+</div>
+<script>
+
+
+</script>
