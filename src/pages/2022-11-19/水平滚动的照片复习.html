@@ -1,0 +1,129 @@
+<title>少一些冲动和浮躁, 多一些冷静和客观</title>
+<style>
+  .gallery-container {
+    width: 380px;
+    height: 420px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* overflow: hidden; */
+    /* border: 1px solid red; */
+    position: relative;
+  }
+
+  .slides {
+    width: 380px;
+    height: 100%;
+    border: 1px solid red;
+    display: grid;
+    grid-auto-flow: column;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+  }
+
+  .slides>div {
+    scroll-snap-align: start;
+  }
+
+  .slides::-webkit-scrollbar {
+    display: none;
+  }
+
+  .slides img {
+    width: 380px;
+    height: 100%;
+  }
+
+  .thumbnails {
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    bottom: 10px;
+    display: flex;
+    justify-content: center;
+  }
+
+
+  .thumbnails .thumb {
+    width: 10px;
+    height: 10px;
+    background: gray;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+
+  .thumbnails .thumb.highlight {
+    background: white;
+  }
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+
+  <div class="gallery-container">
+    <div class="thumbnails">
+      <!-- <div class="thumb" data-id="2"></div> -->
+    </div>
+    <div class="slides">
+      <div><img src="https://picsum.photos/id/1067/540/720"></div>
+      <div><img src="https://picsum.photos/id/122/540/720"></div>
+      <div><img src="https://picsum.photos/id/188/540/720"></div>
+      <div><img src="https://picsum.photos/id/249/540/720"></div>
+      <div><img src="https://picsum.photos/id/257/540/720"></div>
+      <div><img src="https://picsum.photos/id/259/540/720"></div>
+      <div><img src="https://picsum.photos/id/283/540/720"></div>
+      <div><img src="https://picsum.photos/id/288/540/720"></div>
+      <div><img src="https://picsum.photos/id/299/540/720"></div>
+    </div>
+  </div>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>标题</h5>
+      <p>qa?
+      </p>
+      <p>解答</p>
+    </blockquote>
+  </div>
+</div>
+<script>
+  const container = document.querySelector('.gallery-container');
+  const thumbnails = container.querySelector('.thumbnails');
+  const slides = container.querySelector('.slides');
+
+  // 第一步根据图片的数量创建小圆点
+  const imgWraps = slides.querySelectorAll('div');
+  imgWraps.forEach((item, index) => {
+    thumbnails.innerHTML += `<div class="thumb" data-id="${index}"></div>`
+  })
+
+  thumbnails.querySelectorAll(".thumb").forEach(item => {
+    item.addEventListener('click', (e) => {
+      // 小圆点修改背景色
+      thumbnails.querySelectorAll(".thumb").forEach(thumb => {
+        thumb.classList.remove('highlight')
+      })
+      e.target.classList.add('highlight')
+
+      // 图片滚动
+      // e.target.dataset.id
+      let idx = e.target.dataset.id
+      let leftScroll = idx * 380
+      slides.scrollTo(leftScroll, 0);
+    })
+  })
+
+  slides.addEventListener('scroll', (e) => {
+    highlightThumb();
+  })
+
+  // 初始化颜色
+  function highlightThumb() {
+    // 得到向左滚动的距离
+    let idx = Math.ceil(slides.scrollLeft / 380);
+    thumbnails.querySelectorAll(".thumb").forEach(thumb => {
+      thumb.classList.remove('highlight')
+    })
+    thumbnails.querySelector(`[data-id="${idx}"]`).classList.add("highlight")
+  }
+
+  highlightThumb();
+</script>

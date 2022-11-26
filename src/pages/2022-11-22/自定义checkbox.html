@@ -1,0 +1,56 @@
+<title>少一些冲动和浮躁, 多一些冷静和客观</title>
+<style>
+  .foo {
+    width: 300px;
+    height: 300px;
+    border: 1px solid red;
+    display: grid;
+    margin: auto;
+  }
+
+  .foo svg {
+    background: pink;
+    width: 12px;
+    height: 10px;
+    stroke-dasharray: 16px;
+    stroke-dashoffset: 16px;
+    fill: none;
+    stroke: white;
+    transition: all .3s ease-out;
+  }
+
+  .checkbox-input:checked + .checkbox svg {
+    stroke-dashoffset: 0;
+  }
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+  <svg class="checkbox-symbol">
+    <symbol id="check" viewbox="0 0 12 10">
+      <polyline points="1.5 6, 4.5 9, 10.5 1" stroke-width="2"></polyline>
+    </symbol>
+  </svg>
+  <div class="foo">
+    <input class="checkbox-input" id="apples" type="checkbox" />
+    <label class="checkbox" for="apples">
+      <span>
+        <svg>
+          <use xlink:href="#check"></use>
+        </svg>
+      </span>
+      <span>Apples</span>
+    </label>
+  </div>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>标题</h5>
+      <p>qa?
+      </p>
+      <p>解答</p>
+    </blockquote>
+  </div>
+</div>
+<script>
+
+
+</script>

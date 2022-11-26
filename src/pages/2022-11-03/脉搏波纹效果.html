@@ -1,0 +1,60 @@
+<title>少一些冲动和浮躁, 多一些冷静和客观</title>
+<style>
+  .foo {
+    position: relative;
+    width: 64px;
+    height: 64px;
+    box-sizing: border-box;
+    outline: 1px solid red;
+  }
+
+  .foo::before,
+  .foo::after {
+    content: "";
+    position: absolute;
+    animation: bowen 1s ease-out infinite;
+    border: 4px solid;
+    border-radius: 50%;
+    /* box-sizing: border-box; */
+  }
+
+  .foo::after {
+    animation-delay: -.5s;
+  }
+
+  @keyframes bowen {
+    0% {
+      left: 32px;
+      top: 32px;
+      width: 0;
+      height: 0;
+      opacity: 1;
+    }
+
+    100% {
+      left: 0;
+      top: 0;
+      width: 64px;
+      height: 64px;
+      opacity: 0;
+    }
+  }
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+
+  <div class="foo">
+  </div>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>标题</h5>
+      <p>qa?
+      </p>
+      <p>解答</p>
+    </blockquote>
+  </div>
+</div>
+<script>
+
+
+</script>

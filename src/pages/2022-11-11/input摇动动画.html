@@ -1,0 +1,71 @@
+<title>少一些冲动和浮躁, 多一些冷静和客观</title>
+<style>
+  .cinput:invalid {
+    animation: shake .3s ease-out 1;
+    outline: #ff0000 solid 2px;
+  }
+
+  @keyframes shake {
+    0% {
+      margin-left: 0;
+    }
+
+    25% {
+      margin-left: -10px;
+    }
+
+    50% {
+      margin-left: 0;
+    }
+
+    75% {
+      margin-left: 10px;
+    }
+
+    100% {
+      margin-left: 0;
+    }
+  }
+
+  .cinput2:invalid {
+    animation: shake2 .3s ease-out 1;
+    box-shadow: 0 0 .6rem #ff0000;
+  }
+
+  @keyframes shake2 {
+    0% {
+      margin-left: 0;
+    }
+
+    25% {
+      margin-left: -.25rem;
+    }
+
+
+    75% {
+      margin-left: .25rem;
+    }
+
+    100% {
+      margin-left: 0;
+    }
+  }
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+  <input class="cinput" type="text" pattern="[A-Za-z]*">
+  <br>
+  <input class="cinput2" style="margin-top: 100px;" type="text" pattern="[A-Za-z]*">
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>标题</h5>
+      <p>qa?
+      </p>
+      <p>解答</p>
+    </blockquote>
+  </div>
+</div>
+<script>
+
+
+</script>

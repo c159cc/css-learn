@@ -1,0 +1,110 @@
+<title>少一些冲动和浮躁, 多一些冷静和客观</title>
+<style>
+  .gallery-container {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    border: 1px solid red;
+  }
+
+  .thumbnails {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .thumbnails img {
+    width: 40px;
+    height: 40px;
+    background: pink;
+    cursor: pointer;
+  }
+
+  .scrollbar {
+    width: 10px;
+    height: 720px;
+    background: #ccc;
+    margin-left: 8px;
+  }
+
+  .scrollbar .thumb {
+    width: 10px;
+    height: 100px;
+    background: #000;
+  }
+
+  .slides {
+    width: calc(540px + 2rem);
+    height: 720px;
+    margin: 0 16px;
+    padding: 0 .25rem;
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+    scroll-snap-type: y mandatory;
+  }
+
+  .slides div {
+    scroll-snap-align: start;
+  }
+
+  .slides::-webkit-scrollbar {
+    display: none;
+  }
+
+  .slides img {
+    width: 540px;
+  }
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+
+  <div class="gallery-container">
+    <div class="thumbnails"></div>
+    <div class="scrollbar">
+      <div class="thumb"></div>
+    </div>
+    <div class="slides">
+      <div><img src="https://picsum.photos/id/1067/540/720"></div>
+      <div><img src="https://picsum.photos/id/122/540/720"></div>
+      <div><img src="https://picsum.photos/id/188/540/720"></div>
+      <div><img src="https://picsum.photos/id/249/540/720"></div>
+      <div><img src="https://picsum.photos/id/257/540/720"></div>
+      <div><img src="https://picsum.photos/id/259/540/720"></div>
+      <div><img src="https://picsum.photos/id/283/540/720"></div>
+      <div><img src="https://picsum.photos/id/288/540/720"></div>
+      <div><img src="https://picsum.photos/id/299/540/720"></div>
+    </div>
+  </div>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+    </blockquote>
+  </div>
+</div>
+<script>
+  let slidesGallery = document.querySelector('.slides');
+  let imgWraps = slidesGallery.querySelectorAll('div');
+  let thumbnails = document.querySelector('.thumbnails');
+  let thumb = document.querySelector('.thumb');
+  let imgHeight = 720;
+
+
+  // 添加缩略图
+  thumbnails.innerHTML += [...imgWraps].map((item, idx) => {
+    return `<img src="${item.querySelector('img').src}" data-id=${idx}>`
+  }).join(" ")
+
+
+  // 监听点击事件
+  thumbnails.querySelectorAll('img').forEach((item, idx) => {
+    item.addEventListener('click', () => {
+      slidesGallery.scrollTo(0, imgHeight * idx)
+    })
+  })
+
+  // 监听滚动事件
+  slidesGallery.addEventListener('scroll', () => {
+    let idx = Math.ceil(slidesGallery.scrollTop / imgHeight);
+    let scrollHeight = (idx / imgWraps.length) * 720;
+    thumb.style.height = scrollHeight + "px";
+  })
+</script>

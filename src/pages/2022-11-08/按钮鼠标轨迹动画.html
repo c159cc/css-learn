@@ -1,0 +1,56 @@
+<title>少一些冲动和浮躁, 多一些冷静和客观</title>
+<style>
+  .button-mouse-gradient-tracking {
+    padding: 2.5rem 5rem;
+    border: none;
+    outline: none;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .button-mouse-gradient-tracking::before {
+    --size: 0;
+    content: "";
+    position: absolute;
+    width: var(--size);
+    height: var(--size);
+    top: var(--y);
+    left: var(--x);
+    z-index: 2;
+    background: radial-gradient(circle closest-side, pink, transparent);
+    transform: translate(-50%, -50%);
+    transition: width .2s ease, height .2s ease;
+  }
+
+  .button-mouse-gradient-tracking:hover::before {
+    --size: 400px;
+  }
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+
+  <button class="button-mouse-gradient-tracking">
+    点击我
+  </button>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>标题</h5>
+      <p>qa?
+      </p>
+      <p>解答</p>
+    </blockquote>
+  </div>
+</div>
+<script>
+  let btn = document.querySelector('.button-mouse-gradient-tracking');
+  btn.addEventListener('mousemove', (e) => {
+    let rect = e.target.getBoundingClientRect();
+    let x = e.clientX - rect.left;
+    let y = e.clientY - rect.top;
+    btn.style.setProperty('--x', x + "px");
+    btn.style.setProperty('--y', y + "px");
+    console.log("x",x," y=",y,e)
+
+  })
+
+</script>

@@ -1,0 +1,65 @@
+<title>少一些冲动和浮躁, 多一些冷静和客观</title>
+<style>
+  .gallery-container {
+    display: flex;
+    justify-content: center;
+    border: 1px solid red;
+    position: relative;
+    padding: 10px;
+    height: 200px;
+  }
+
+  .slides {
+    display: grid;
+    grid-auto-flow: column;
+    padding: 5px;
+    border: 1px solid orange;
+    /* scroll-snap-type: x mandatory; */
+    width: 380px;
+  }
+
+  .slides .son {
+    border: 1px solid yellow;
+    width: 380px;
+    /* scroll-snap-align: start; */
+  }
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+
+  <div class="gallery-container">
+    <!-- <div class="thumbnails">
+  </div> -->
+    <div class="slides">
+      <div class="son"></div>
+      <div class="son"></div>
+      <!-- <div><img src="https://picsum.photos/id/1067/540/720"></div>
+      <div><img src="https://picsum.photos/id/122/540/720"></div>
+      <div><img src="https://picsum.photos/id/188/540/720"></div>
+      <div><img src="https://picsum.photos/id/249/540/720"></div>
+      <div><img src="https://picsum.photos/id/257/540/720"></div>
+      <div><img src="https://picsum.photos/id/259/540/720"></div>
+      <div><img src="https://picsum.photos/id/283/540/720"></div>
+      <div><img src="https://picsum.photos/id/288/540/720"></div>
+      <div><img src="https://picsum.photos/id/299/540/720"></div> -->
+    </div>
+  </div>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>黄色框的grid-item设置了宽度为100%为什么只占了50%的宽度?</h5>
+      <p>slides的宽度来自 flex:1; 如果slides的子元素把父元素撑大, slides的宽度大于flex:1得来的宽度
+      </p>
+      <p>相当于 slides-width = max(flex:1, sum(children.width))</p>
+      <p>我的理解为: son 设置为100%的时候, son的宽度应该等于父元素的宽度 </p>
+      <h5>son 为100%的时候, 它的宽度是谁的宽度?</h5>
+      <p>实际上等于父元素宽度的一半</p>
+      <h5>son 为40%的时候, 它的宽度是谁的宽度?</h5>
+      <p>实际上等于父元素宽度的一半再乘以40%</p>
+      <p>当grid-auto-flow为column的时候, 所有子元素平分父元素的宽度, 这个时候子元素设置百分比不是相对父元素, 而是相对于父元素平分给子元素的宽度</p>
+    </blockquote>
+  </div>
+</div>
+<script>
+
+
+</script>

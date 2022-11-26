@@ -1,0 +1,59 @@
+<title>少一些冲动和浮躁, 多一些冷静和客观</title>
+<style>
+  .radio-container {
+    height: 60px;
+    background: #fff;
+    border: 1px solid red;
+    display: flex;
+    place-items: center;
+  }
+
+  .radio-input {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid #222;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    /* background: blue; */
+  }
+  .radio-input::before{
+    content:"";
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: white;
+    transform: scale(0);
+    transition: transform .3s ease;
+  }
+  .radio-input:checked{
+    background: blue;
+  }
+  .radio-input:checked::before{
+    transform:scale(1);
+  }
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+  <div class="radio-container">
+    <input class="radio-input" id="apples" type="radio" name="fruit" />
+    <label class="radio" for="apples">Apples</label>
+    <input class="radio-input" id="oranges" type="radio" name="fruit" />
+    <label class="radio" for="oranges">Oranges</label>
+  </div>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>标题</h5>
+      <p>qa?
+      </p>
+      <p>解答</p>
+    </blockquote>
+  </div>
+</div>
+<script>
+
+
+</script>

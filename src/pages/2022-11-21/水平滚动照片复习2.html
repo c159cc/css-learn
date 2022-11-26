@@ -1,0 +1,109 @@
+<title>少一些冲动和浮躁, 多一些冷静和客观</title>
+<style>
+  .gallery-container {
+    display: flex;
+    /* justify-content: center; */
+    position: relative;
+    width: 280px;
+    height: 380px;
+    /* overflow: hidden; */
+    padding: 10px;
+    border: 1px solid red;
+  }
+
+  .slides {
+    display: grid;
+    grid-auto-flow: column;
+    border: 1px solid green;
+    padding: 5px;
+    overflow-x: scroll;
+  }
+
+  .slides img {
+    width: 280px;
+    height: 380px;
+  }
+
+  .thumbnails {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .thumb {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ccc;
+  }
+
+  .thumb:not(:last-child) {
+    margin-right: 10px;
+  }
+
+  .highlighted {
+    background: white;
+  }
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+  <div class="gallery-container">
+    <div class="thumbnails">
+
+      <!-- <div class="thumb"></div> -->
+    </div>
+    <div class="slides">
+      <div><img src="https://picsum.photos/id/1067/540/720"></div>
+      <div><img src="https://picsum.photos/id/122/540/720"></div>
+      <div><img src="https://picsum.photos/id/188/540/720"></div>
+      <div><img src="https://picsum.photos/id/249/540/720"></div>
+      <div><img src="https://picsum.photos/id/257/540/720"></div>
+      <div><img src="https://picsum.photos/id/259/540/720"></div>
+      <div><img src="https://picsum.photos/id/283/540/720"></div>
+      <div><img src="https://picsum.photos/id/288/540/720"></div>
+      <div><img src="https://picsum.photos/id/299/540/720"></div>
+    </div>
+  </div>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>标题</h5>
+      <p>qa?
+      </p>
+      <p>解答</p>
+    </blockquote>
+  </div>
+</div>
+<script>
+  const galleryContainer = document.querySelector('.gallery-container');
+  const thumbnails = galleryContainer.querySelector('.thumbnails');
+  const slides = galleryContainer.querySelector('.slides');
+
+  slides.querySelectorAll('div').forEach((item, index) => {
+    thumbnails.innerHTML += `<div class="thumb" data-id="${index}"></div>`
+  })
+
+  thumbnails.querySelectorAll('.thumb').forEach(item => {
+    item.addEventListener('click', (e) => {
+      // console.log("spot clidk", )
+      let idx = e.target.dataset.id;
+      // 高亮小圆点
+      thumbnails.querySelectorAll('.thumb').forEach(thumb => {
+        thumb.classList.remove('highlighted')
+      })
+
+      let curEle = thumbnails.querySelector(`[data-id="${idx}"]`);
+      console.log("curEle  ", curEle)
+      console.log("curEle  ", curEle.classList)
+      curEle.classList.add('highlighted');
+      console.log("curEle  ", curEle.classList)
+
+
+      // 滚动图片, 需要设置sroll
+      slides.scrollTo(200,0)
+    })
+  })
+
+</script>

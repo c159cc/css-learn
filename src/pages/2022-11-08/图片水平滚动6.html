@@ -1,0 +1,117 @@
+<title>少一些冲动和浮躁, 多一些冷静和客观</title>
+<style>
+  .gallery-container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+
+  .slides {
+    width: 380px;
+    display: grid;
+    grid-auto-flow: column;
+    /* grid-template-columns: 380px; */
+    overflow-y: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+  }
+
+  .slides::-webkit-scrollbar {
+    display: none;
+  }
+
+  .slides div {
+    width: 380px;
+    /* outline: 1px solid pink;
+    padding: 2px; */
+    scroll-snap-align: start;
+  }
+
+  .slides img {
+    width: 100%;
+  }
+
+  .thumbnails {
+    position: absolute;
+    bottom: 30px;
+    display: flex;
+    justify-content: center;
+    column-gap: 10px;
+  }
+
+  .thumbnails div {
+    width: 10px;
+    height: 10px;
+    background: #aaa;
+    border-radius: 50%;
+  }
+
+  .thumbnails div.highlight {
+    background: #fff;
+  }
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+
+  <div class="gallery-container">
+    <div class="thumbnails">
+
+    </div>
+    <div class="slides">
+      <div><img src="https://picsum.photos/id/1067/540/720"></div>
+      <div><img src="https://picsum.photos/id/122/540/720"></div>
+      <div><img src="https://picsum.photos/id/188/540/720"></div>
+      <div><img src="https://picsum.photos/id/249/540/720"></div>
+      <div><img src="https://picsum.photos/id/257/540/720"></div>
+      <div><img src="https://picsum.photos/id/259/540/720"></div>
+      <div><img src="https://picsum.photos/id/283/540/720"></div>
+      <div><img src="https://picsum.photos/id/288/540/720"></div>
+      <div><img src="https://picsum.photos/id/299/540/720"></div>
+    </div>
+  </div>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+    </blockquote>
+  </div>
+</div>
+<script>
+  let galleryContainer = document.querySelector('.gallery-container');
+  let thumbnails = galleryContainer.querySelector('.thumbnails');
+  let slides = galleryContainer.querySelector('.slides');
+  let imgsWrap = slides.querySelectorAll('div');
+
+  // 产生圆点
+  imgsWrap.forEach((item, index) => {
+    thumbnails.innerHTML += `<div data-id=${index}></div>`;
+  })
+
+  // 点击原点切换图片
+  thumbnails.querySelectorAll('div').forEach(item => {
+    item.addEventListener('click', (e) => {
+      // 得到idx
+      let idx = e.target.dataset.id
+
+      // 滚动图片
+      slides.scrollTo(idx * 380, 0);
+    })
+  })
+
+  // 控制键盘的时候呢?
+  slides.addEventListener('scroll', e => highlightNail())
+
+  let highlightNail = () => {
+    // 所有的变灰
+    thumbnails.querySelectorAll('div').forEach(el => {
+      el.classList.remove("highlight");
+    })
+
+    // idx变白
+    let idx = Math.ceil(slides.scrollLeft / 380)
+    let ele = thumbnails.querySelector(`[data-id="${idx}"]`)
+    ele.classList.add('highlight')
+  }
+
+  // 默认情况
+  highlightNail(0)
+
+</script>

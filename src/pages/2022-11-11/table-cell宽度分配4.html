@@ -1,0 +1,65 @@
+<title>inline-block可以增加table-cell宽度</title>
+<style>
+  .table {
+    width: 100px;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr auto;
+    grid-auto-columns: 100%;
+  }
+
+  .table>div {
+    border: 1px solid red;
+  }
+
+  /* .boo {
+    display: inline-block;
+    width: 200px;
+    height: 100px;
+    background: pink;
+  } */
+
+
+  .foo {
+    display: inline-block;
+    min-width: 30px;
+    max-width: 200px;
+    position: relative;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 0;
+    border: 1px solid red;
+  }
+
+  .foo::before {
+    content: "";
+    width: 100%;
+    /* position: absolute; */
+    float: left;
+    padding-bottom: 50%;
+    background: pink;
+    z-index: -1;
+  }
+
+  .foo::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+  <div class="table">
+    <div>前提必须设置width</div>
+    <div class="foo">前提必须设置width前提必须设置width</div>
+  </div>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>文本给了inline-block一个宽度, table给了一个, table的优先级更高</h5>
+      <h5>如何提升文本宽度的优先级?</h5>
+    </blockquote>
+  </div>
+</div>
+<script>
+
+
+</script>

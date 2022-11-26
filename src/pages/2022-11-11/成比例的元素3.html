@@ -1,0 +1,53 @@
+<title>父元素尺寸不固定</title>
+<style>
+  .foo {
+    display: inline-block;
+    min-width: 100px;
+    min-height: 50px;
+    width: 200px;
+    border: 1px solid red;
+  }
+
+  .fooa {
+    content: "";
+    display: block;
+    width: 100%;
+    padding-bottom: 50%;
+    background: pink;
+    position: relative;
+  }
+
+  /* son 为absolute 可以继承比例, 无法撑大父元素尺寸*/
+  .son {
+    float: left;
+    border: 10px solid orange;
+  }
+
+  .fooa::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+  <div class="foo">
+    <div class="fooa">
+    <!-- <div class="son">
+      父元素尺寸不固定父元素尺寸不固定父元素尺寸不固定父元素尺寸不固定父元素尺寸不固定父元素尺寸不固定父元素尺寸不固定父元素尺寸不固定父元素尺寸不固定父元素尺寸不固定父元素尺寸不固定父元素尺寸不固定父元素尺寸不固定父元素尺寸不固定父元素尺寸不固定父元素尺寸不固定父元素尺寸不固定父元素尺寸不固定父元素尺寸不固定父元素尺寸不固定
+    </div> -->
+    </div>
+  </div>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>标题</h5>
+      <p>qa?
+      </p>
+      <p>解答</p>
+    </blockquote>
+  </div>
+</div>
+<script>
+
+
+</script>

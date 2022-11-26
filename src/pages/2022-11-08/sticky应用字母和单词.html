@@ -1,0 +1,92 @@
+<title>少一些冲动和浮躁, 多一些冷静和客观</title>
+<style>
+  .container {
+    display: grid;
+    place-items: center;
+  }
+
+  .floating-stack {
+    width: 380px;
+    height: 300px;
+    outline: 1px solid red;
+    overflow-y: scroll;
+    background:#455a64;
+    color:#fff;
+  }
+
+  .floating-stack dl {
+    display: grid;
+    grid-template-columns: 2.5rem, 1fr;
+    /* align-items: center; */
+    /* outline: 1px orange solid; */
+  }
+
+  /* floating-stack 高度固定, dl高度溢出, 所以产生滚动 */
+  dl > dt {
+    position: sticky;
+    top:0;
+    grid-column: 1;
+    width: 2rem;
+    height: 2rem;
+    padding:.25rem 1rem;
+    border-radius: 50%;
+    background:#263238;
+    color:#cfd8dc;
+    display:  flex;
+    place-items: center;
+  }
+
+  dl>dd{
+    grid-column: 2;
+  }
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+
+  <div class="container">
+    <div class="floating-stack">
+      <dl>
+        <dt>A</dt>
+        <dd>Algeria</dd>
+        <dd>Angola</dd>
+
+        <dt>B</dt>
+        <dd>Benin</dd>
+        <dd>Botswana</dd>
+        <dd>Burkina Faso</dd>
+        <dd>Burundi</dd>
+
+        <dt>C</dt>
+        <dd>Cabo Verde</dd>
+        <dd>Cameroon</dd>
+        <dd>Central African Republic</dd>
+        <dd>Chad</dd>
+        <dd>Comoros</dd>
+        <dd>Congo, Democratic Republic of the</dd>
+        <dd>Congo, Republic of the</dd>
+        <dd>Cote d'Ivoire</dd>
+
+        <dt>D</dt>
+        <dd>Djibouti</dd>
+
+        <dt>E</dt>
+        <dd>Egypt</dd>
+        <dd>Equatorial Guinea</dd>
+        <dd>Eritrea</dd>
+        <dd>Eswatini (formerly Swaziland)</dd>
+        <dd>Ethiopia</dd>
+      </dl>
+    </div>
+  </div>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>关键属性</h5>
+      <p>position:sticky; top:0;
+      </p>
+    </blockquote>
+  </div>
+</div>
+<script>
+
+
+</script>

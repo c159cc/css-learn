@@ -1,0 +1,51 @@
+<title>少一些冲动和浮躁, 多一些冷静和客观</title>
+<style>
+  .overflow-scroll-gradient {
+    position: relative;
+    width: 240px;
+    height: 200px;
+    padding: 0 15px;
+    background: white;
+    line-height: 1.2;
+    overflow-y: scroll;
+  }
+
+  .overflow-scroll-gradient::after {
+    content: '';
+    display: block;
+    position: sticky;
+    width: 100%;
+    height: 40px;
+    bottom: 0;
+    left:0;
+    background: linear-gradient(transparent, white);
+    /* background: red; */
+    pointer-events: none;
+  }
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+
+  <div class="overflow-scroll-gradient">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. <br />
+    Iure id exercitationem nulla qui repellat laborum vitae, <br />
+    molestias tempora velit natus. Quas, assumenda nisi. <br />
+    Quisquam enim qui iure, consequatur velit sit? <br />
+    Lorem ipsum dolor sit amet consectetur adipisicing elit.<br />
+    Iure id exercitationem nulla qui repellat laborum vitae, <br />
+    molestias tempora velit natus. Quas, assumenda nisi. <br />
+    Quisquam enim qui iure, consequatur velit sit?
+  </div>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>标题</h5>
+      <p>qa?
+      </p>
+      <p>解答</p>
+    </blockquote>
+  </div>
+</div>
+<script>
+
+
+</script>

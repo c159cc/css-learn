@@ -1,0 +1,63 @@
+<title>少一些冲动和浮躁, 多一些冷静和客观</title>
+<style>
+.hover-nav{
+  width: 380px;
+  height: 300px;
+  outline: 1px solid red;
+  color:green;
+}
+.hover-nav>ul{
+  list-style: none;
+  padding: 0;
+  margin:0;
+}
+.hover-nav ul li{
+  float:left;
+  position: relative;
+  z-index:0;
+  padding:.35rem 1rem;
+}
+
+
+.hover-nav ul li::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top:0;
+  bottom: 0;
+  right: 0;
+   width: 100%;
+  height: 100%;
+  background: blue;
+  transform: scale(0);
+  z-index: -1;
+  transition: .5s transform ease-in-out;
+}
+.hover-nav ul li:hover::before{
+  transform: scale(1);
+}
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+
+  <nav class="hover-nav">
+    <ul>
+      <li>Home</li>
+      <li>About</li>
+      <li>Contact</li>
+    </ul>
+  </nav>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>知识点1: 背景色从0到1的动画</h5>
+      <p>transform:scale(0) --> scale(1)
+      </p>
+      <h5>知识点2: 子元素的背景色不遮挡父元素文本 </h5>
+      <p>子元素设置z-index为-1, 父元素设置z-index为0</p>
+    </blockquote>
+  </div>
+</div>
+<script>
+
+
+</script>

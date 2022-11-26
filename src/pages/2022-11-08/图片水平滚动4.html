@@ -1,0 +1,66 @@
+<title>少一些冲动和浮躁, 多一些冷静和客观</title>
+<style>
+  .gallery-container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    padding: 10px;
+  }
+
+  .slides {
+    width: 380px;
+    display: grid;
+    grid-auto-flow: column;
+    padding: 5px;
+    border: 1px solid orange;
+    scroll-snap-type: x mandatory;
+    overscroll-behavior-x: contain;
+    overflow-y: auto;
+    scrollbar-width: none;
+
+  }
+
+  .slides::-webkit-scrollbar {
+    display: none;
+  }
+
+  .slides div {
+    border: 1px solid yellow;
+    width: 380px;
+    padding: 10px;
+    /* scroll-snap-align: start; */
+  }
+
+  .slides img {
+    width: 100%;
+  }
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+
+  <div class="gallery-container">
+    <div class="thumbnails">
+    </div>
+    <div class="slides">
+      <div><img src="https://picsum.photos/id/1067/540/720"></div>
+      <div><img src="https://picsum.photos/id/122/540/720"></div>
+      <div><img src="https://picsum.photos/id/188/540/720"></div>
+      <div><img src="https://picsum.photos/id/249/540/720"></div>
+      <div><img src="https://picsum.photos/id/257/540/720"></div>
+      <div><img src="https://picsum.photos/id/259/540/720"></div>
+      <div><img src="https://picsum.photos/id/283/540/720"></div>
+      <div><img src="https://picsum.photos/id/288/540/720"></div>
+      <div><img src="https://picsum.photos/id/299/540/720"></div>
+    </div>
+  </div>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>为什么设置overflow-y为auto, x方向反而出现滚动条?</h5>
+      <p>If overflow-y is hidden, scroll or auto and this property is visible, it will implicitly compute to auto.</p>
+    </blockquote>
+  </div>
+</div>
+<script>
+
+
+</script>

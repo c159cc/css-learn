@@ -1,0 +1,59 @@
+<title>少一些冲动和浮躁, 多一些冷静和客观</title>
+<style>
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    border-radius: 20px;
+    background: gray;
+    transition: background .3s;
+  }
+
+  .switch::before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: pink;
+    left: 1px;
+    /* top:1px; */
+    transition: transform .3s;
+  }
+
+  .offscreen:checked+.switch {
+    background: green;
+  }
+
+  .offscreen:checked+.switch {
+    background: blue;
+  }
+
+  .offscreen:checked+.switch::before {
+    transform: translateX(20px);
+  }
+
+  .offscreen {
+    position: absolute;
+    left: -999px;
+  }
+</style>
+<div id="effect" class="part">
+  <h3>效果：</h3>
+
+  <input type="checkbox" id="toggle" class="offscreen" />
+  <label for="toggle" class="switch"></label>
+  <div class="markdown-section">
+    <blockquote class="block-tip">
+      <h5>标题</h5>
+      <p>qa?
+      </p>
+      <p>解答</p>
+    </blockquote>
+  </div>
+</div>
+<script>
+
+
+</script>
